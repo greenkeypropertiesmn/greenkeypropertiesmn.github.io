@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Green Key Properties — Rental Pre-Screen</title>
+<style>
+  :root{
+    --green:#123f2d;        /* deep green */
+    --green-2:#0c2e21;      /* darker green */
+    --green-line:#2f5c48;
+    --gold:#c39a3f;         /* brass key gold */
+    --gold-soft:#e8d9ac;
+    --cream:#f7f5ee;
+    --paper:#ffffff;
+    --ink:#20281f;
+    --muted:#5f6b5c;
+    --ok:#1f7a4d;
+    --warn:#9a5b12;
+    --warn-bg:#fdf3e2;
+    --ok-bg:#e9f5ee;
+    --radius:12px;
+    --shadow:0 2px 10px rgba(18,63,45,.08);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--cream);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
+  /* header */
+  header{background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 100%);color:#fff;padding:38px 0 30px;border-bottom:3px solid var(--gold)}
+  .brand{display:flex;align-items:center;gap:14px;max-width:760px;margin:0 auto;padding:0 18px}
+  .key{width:44px;height:44px;flex:0 0 44px}
+  .brand h1{font-size:1.5rem;letter-spacing:.5px;margin:0;font-weight:700}
+  .brand .sub{color:var(--gold-soft);font-size:.82rem;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
+  .lede{max-width:760px;margin:22px auto 0;padding:0 18px;color:#eef4ef;font-size:1.02rem}
+  .lede strong{color:#fff}
+  /* card */
+  .card{background:var(--paper);border:1px solid #e7e4d7;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-top:26px}
+  .card h2{font-size:1.06rem;margin:0 0 4px;color:var(--green)}
+  .card .hint{color:var(--muted);font-size:.86rem;margin:0 0 16px}
+  .sec-num{display:inline-block;background:var(--gold);color:#3a2d07;font-weight:700;border-radius:50%;width:22px;height:22px;text-align:center;font-size:.8rem;line-height:22px;margin-right:8px}
+  label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 5px}
+  label .req{color:var(--gold);font-weight:700}
+  .opt{color:var(--muted);font-weight:500;font-size:.8rem}
+  input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],select,textarea{
+    width:100%;padding:11px 12px;border:1px solid #cfd6cb;border-radius:8px;font-size:1rem;background:#fff;color:var(--ink);font-family:inherit
+  }
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(18,63,45,.12)}
+  textarea{min-height:70px;resize:vertical}
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .row > div{flex:1;min-width:180px}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-top:8px}
+  @media(max-width:560px){.checks{grid-template-columns:1fr}}
+  .checks label,.inline label{font-weight:500;display:flex;align-items:flex-start;gap:8px;margin:0;font-size:.92rem;cursor:pointer}
+  .checks input,.inline input{margin-top:3px;width:auto}
+  .inline{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px}
+  .yn{display:flex;gap:10px;margin-top:6px}
+  .yn label{border:1px solid #cfd6cb;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;font-size:.9rem;background:#fff}
+  .yn input{display:none}
+  .yn input:checked + span{color:var(--green)}
+  .yn label:has(input:checked){border-color:var(--green);background:var(--ok-bg)}
+  .occupant{border:1px dashed #cbd3c6;border-radius:8px;padding:14px;margin-top:12px;position:relative}
+  .occupant .rm{position:absolute;top:8px;right:10px;background:none;border:none;color:var(--warn);cursor:pointer;font-size:.82rem}
+  .addbtn{margin-top:12px;background:#fff;border:1px solid var(--green);color:var(--green);padding:9px 16px;border-radius:8px;font-weight:600;cursor:pointer;font-size:.9rem}
+  .addbtn:hover{background:var(--ok-bg)}
+  /* calculator */
+  .calc{background:var(--green-2);border-radius:10px;padding:18px;margin-top:18px;color:#eaf2ec}
+  .calc label{color:#dbe7de}
+  .calc input{background:#fff;color:var(--ink)}
+  .readout{margin-top:16px;padding:14px 16px;border-radius:8px;background:#0a271c;border:1px solid var(--green-line);text-align:center}
+  .readout .ratio{font-size:1.9rem;font-weight:800;letter-spacing:.5px}
+  .readout .msg{font-size:.9rem;margin-top:4px}
+  .readout.ok{background:var(--ok-bg);color:#0e3b25;border-color:#bfe0cd}
+  .readout.ok .ratio{color:var(--ok)}
+  .readout.short{background:var(--warn-bg);color:#5a3a0d;border-color:#f0dcb8}
+  .readout.short .ratio{color:var(--warn)}
+  /* carve-out note */
+  .note{background:var(--warn-bg);border-left:3px solid var(--gold);padding:11px 14px;border-radius:6px;font-size:.86rem;color:#5a4a24;margin-top:10px}
+  .policy{font-size:.9rem;color:var(--ink);background:var(--cream);border-radius:8px;padding:14px 16px;margin-top:6px}
+  .policy li{margin:6px 0}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:.9rem}
+  .consent input{margin-top:3px}
+  .submit{margin-top:24px;width:100%;background:var(--gold);color:#2e2405;border:none;padding:15px;border-radius:10px;font-size:1.05rem;font-weight:700;letter-spacing:.4px;cursor:pointer}
+  .submit:hover{background:#b98f34}
+  .submit:disabled{opacity:.55;cursor:not-allowed}
+  footer{max-width:760px;margin:34px auto 0;padding:0 18px;color:var(--muted);font-size:.82rem;text-align:center}
+  footer a{color:var(--green)}
+  .thanks{display:none;background:var(--paper);border:1px solid #e7e4d7;border-radius:var(--radius);box-shadow:var(--shadow);padding:40px 28px;margin-top:26px;text-align:center}
+  .thanks h2{color:var(--green);margin-top:0}
+  .thanks .k{width:52px;height:52px;margin:0 auto 10px}
+  .miss{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.14)!important}
+  .field-error{display:none;color:var(--warn);font-size:.82rem;margin:5px 0 0}
+  .field-error.visible{display:block}
+  input.input-error{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.14)!important}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">
+    <svg class="key" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="17" cy="17" r="10" stroke="#c39a3f" stroke-width="3.4"/>
+      <circle cx="17" cy="17" r="3.4" fill="#c39a3f"/>
+      <path d="M24.2 24.2 L40 40" stroke="#c39a3f" stroke-width="3.4" stroke-linecap="round"/>
+      <path d="M33 33 h6 M36 36 h5" stroke="#c39a3f" stroke-width="3.4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>GREEN KEY PROPERTIES</h1>
+      <div class="sub">Rental Pre-Screen</div>
+    </div>
+  </div>
+  <p class="lede">Thank you for your interest in one of our homes. We're a <strong>small, hands-on management company</strong>, and we're intentional about who we welcome into our buildings. This short pre-screen is the first step — <strong>we schedule showings only after it's completed.</strong> It helps us match the right home to the right resident, and it saves you a trip if a unit isn't the right fit. Everything below takes about five minutes.</p>
+</header>
+
+<div class="wrap">
+<form id="gkForm" action="https://formspree.io/f/mlgqezjj" method="POST" novalidate>
+
+  <!-- hidden routing helpers for Formspree -->
+  <input type="hidden" name="_subject" value="New Green Key rental pre-screen">
+  <input type="text" name="_gotcha" style="display:none">
+  <input type="hidden" name="form_source" value="green-key-intake">
+
+  <!-- 1. About you -->
+  <section class="card">
+    <h2><span class="sec-num">1</span>About you</h2>
+    <p class="hint">Enter your name exactly as it appears on your government-issued photo ID.</p>
+    <div class="row">
+      <div><label>First name <span class="req">*</span></label><input type="text" name="first_name" required></div>
+      <div><label>Middle name <span class="opt">(optional)</span></label><input type="text" name="middle_name"></div>
+      <div><label>Last name <span class="req">*</span></label><input type="text" name="last_name" required></div>
+    </div>
+    <div class="row">
+      <div><label>Email <span class="req">*</span></label><input type="email" name="email" required></div>
+      <div><label>Cell phone <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="952-000-0000" autocomplete="tel" required>
+        <p class="field-error" id="phoneError">That number doesn't look right — mind double-checking it?</p></div>
+    </div>
+    <label>Current mailing address <span class="req">*</span></label>
+    <input type="text" name="current_address" placeholder="Street, unit, city, state, ZIP" required>
+    <div class="row">
+      <div><label>How long at this address? <span class="req">*</span></label><input type="text" name="time_at_address" placeholder="e.g. 2 years 3 months" required></div>
+      <div><label>Do you rent or own now?</label>
+        <select name="rent_or_own"><option value="">Select…</option><option>Rent</option><option>Own</option><option>Other</option></select></div>
+    </div>
+    <label>Current landlord — name &amp; phone <span class="req">*</span></label>
+    <input type="text" name="current_landlord" placeholder="Name and phone — or write &quot;I own&quot;" required>
+    <label>If you've been here less than 3 years: previous address + landlord <span class="opt">(optional)</span></label>
+    <input type="text" name="previous_landlord" placeholder="Previous address, and prior landlord name &amp; phone">
+  </section>
+
+  <!-- 2. The home -->
+  <section class="card">
+    <h2><span class="sec-num">2</span>The home you're interested in</h2>
+    <p class="hint">Enter the address and the listed rent for the specific unit — that's how we know exactly which home you mean, and it sets your income check below.</p>
+    <label>Address of the unit you're interested in <span class="req">*</span></label>
+    <input type="text" name="unit_interested" placeholder="Street address + unit #, city" required>
+    <div class="row">
+      <div><label>Monthly rent for this unit ($) <span class="req">*</span></label><input type="number" id="rent" name="monthly_rent" min="0" step="25" placeholder="e.g. 1850" inputmode="numeric" required></div>
+      <div><label>Size <span class="opt">(beds/baths)</span></label><input type="text" name="unit_size" placeholder="e.g. 2 bed / 1 bath"></div>
+    </div>
+    <div class="row">
+      <div><label>Desired move-in date <span class="req">*</span></label><input type="date" name="move_in" required></div>
+      <div><label>Desired lease length</label>
+        <select name="lease_length"><option value="">Select…</option><option>12 months</option><option>6 months</option><option>Month-to-month</option><option>Other</option></select></div>
+    </div>
+    <label>How did you hear about this home? <span class="req">*</span></label>
+    <select name="referral_source" required>
+      <option value="">Select…</option>
+      <option>Zumper</option><option>Craigslist</option><option>Zillow</option><option>Facebook Marketplace</option>
+      <option>Referral from a friend</option><option>Drove by / saw a sign</option><option>Other</option>
+    </select>
+    <label style="margin-top:12px">Paste the link where you found this home <span class="opt">(optional)</span></label>
+    <input type="url" name="listing_link" placeholder="https://…">
+    <label style="margin-top:12px">When are you available to tour? <span class="opt">(days + times that work)</span></label>
+    <textarea name="showing_availability" placeholder="e.g. weekday evenings after 5, or Saturday mornings"></textarea>
+  </section>
+
+  <!-- 3. Household -->
+  <section class="card">
+    <h2><span class="sec-num">3</span>Who will live here</h2>
+    <p class="hint">List <strong>every</strong> adult and child who will occupy the home, including yourself. All adults (18+) will complete the formal application.</p>
+    <div id="occupants"></div>
+    <button type="button" class="addbtn" id="addOcc">+ Add an occupant</button>
+
+    <label style="margin-top:18px">Vehicles that will be parked here</label>
+    <div class="row">
+      <div><label>Number of vehicles</label><input type="number" name="vehicle_count" min="0" placeholder="0"></div>
+      <div><label>Make / model / plate</label><input type="text" name="vehicle_details" placeholder="e.g. Honda CR-V, ABC-123"></div>
+    </div>
+    <label>Do you need off-street parking?</label>
+    <div class="inline">
+      <label><input type="radio" name="parking_needed" value="Yes"> Yes</label>
+      <label><input type="radio" name="parking_needed" value="No"> No</label>
+    </div>
+    <label>Smoking <span class="req">*</span></label>
+    <div class="note" style="margin-top:6px">Our homes are <strong>smoke-free and vape-free indoors</strong> — smoking inside is not permitted.</div>
+    <label class="consent" style="margin-top:8px">
+      <input type="checkbox" name="smoke_free_ack" value="Agreed - smoke-free indoors" required>
+      <span>I understand and agree the home is smoke-free indoors.</span>
+    </label>
+  </section>
+
+  <!-- 4. Income & qualification -->
+  <section class="card">
+    <h2><span class="sec-num">4</span>Income &amp; qualification</h2>
+    <p class="hint">We ask this so we can confirm the home is a comfortable fit financially. We count <strong>all lawful, verifiable income equally</strong> — the only requirement is that documented household income is at least <strong>3× the monthly rent.</strong></p>
+    <div class="calc">
+      <p class="hint" style="color:#cfe0d5;margin:0 0 10px">We use the <strong>rent you entered in section 2</strong> and compare it to your household income.</p>
+      <div class="row">
+        <div><label>Total monthly household income, before taxes ($)</label><input type="number" id="income" name="household_income" min="0" step="50" placeholder="combined, all occupants" inputmode="numeric"></div>
+      </div>
+      <label style="margin-top:14px">What makes up that income? <span class="opt">(check all — we verify all of it)</span></label>
+      <div class="checks">
+        <label><input type="checkbox" name="income_sources" value="Employment / wages"> Employment / wages</label>
+        <label><input type="checkbox" name="income_sources" value="Self-employment / business"> Self-employment / business</label>
+        <label><input type="checkbox" name="income_sources" value="Retirement / Social Security / pension"> Retirement / Social Security / pension</label>
+        <label><input type="checkbox" name="income_sources" value="Disability or other benefits"> Disability or other benefits</label>
+        <label><input type="checkbox" name="income_sources" value="Housing assistance / voucher"> Housing assistance / voucher</label>
+        <label><input type="checkbox" name="income_sources" value="Child support / alimony"> Child support / alimony</label>
+        <label><input type="checkbox" name="income_sources" value="Other"> Other</label>
+      </div>
+      <div class="readout" id="readout">
+        <div class="ratio" id="ratio">—</div>
+        <div class="msg" id="ratioMsg">Enter the unit's rent (section 2) and your household income to see where you stand.</div>
+      </div>
+      <input type="hidden" name="income_to_rent_ratio" id="ratioField">
+    </div>
+  </section>
+
+  <!-- 5. Employment & references -->
+  <section class="card">
+    <h2><span class="sec-num">5</span>Employment &amp; references</h2>
+    <div class="row">
+      <div><label>Current employer <span class="req">*</span></label><input type="text" name="employer_name" required></div>
+      <div><label>How long there? <span class="req">*</span></label><input type="text" name="time_at_job" placeholder="e.g. 3 years" required></div>
+    </div>
+    <label>How we contact your employer for a reference <span class="req">*</span></label>
+    <input type="text" name="employer_contact" placeholder="Name, phone or email" required>
+    <label>Reference #1 — full name &amp; contact <span class="req">*</span></label>
+    <input type="text" name="reference_1" placeholder="Full name, phone or email" required>
+    <label>Reference #2 — full name &amp; contact <span class="opt">(optional)</span></label>
+    <input type="text" name="reference_2" placeholder="Full name, phone or email">
+  </section>
+
+  <!-- 6. Pets & animals -->
+  <section class="card">
+    <h2><span class="sec-num">6</span>Pets &amp; animals</h2>
+    <label>Will any pets live in the home? <span class="req">*</span></label>
+    <div class="yn">
+      <label><input type="radio" name="has_pets" value="No" required onchange="togglePets(false)"><span>No pets</span></label>
+      <label><input type="radio" name="has_pets" value="Yes" onchange="togglePets(true)"><span>Yes</span></label>
+    </div>
+    <div id="petDetails">
+      <p class="hint" style="margin-top:14px">If pets will live here, describe each one — <strong>type, breed, and weight</strong>. Breed is required for dogs. (No pets? Skip this.)</p>
+      <div class="row">
+        <div><label>Type</label>
+          <select name="pet_type" id="petType" onchange="petTypeChange()"><option value="">Select…</option><option>Dog</option><option>Cat</option><option>Other</option></select></div>
+        <div><label>Breed <span class="opt">(required for dogs)</span></label><input type="text" name="pet_breed" id="petBreed"></div>
+        <div><label>Weight (lbs)</label><input type="number" name="pet_weight" min="0"></div>
+      </div>
+      <label>Spayed / neutered?</label>
+      <div class="inline">
+        <label><input type="radio" name="pet_fixed" value="Yes"> Yes</label>
+        <label><input type="radio" name="pet_fixed" value="No"> No</label>
+      </div>
+      <label style="margin-top:12px">More than one pet? Describe the others here.</label>
+      <textarea name="pet_additional" placeholder="Type, breed, weight, spayed/neutered for each additional pet"></textarea>
+      <div class="note">For insurance and safety reasons, certain dog breeds are not permitted in our homes — including pit bull-type breeds (American Pit Bull Terrier, American Staffordshire Terrier, Staffordshire Bull Terrier), Rottweilers, Doberman Pinschers, Cane Corso, Presa Canario, Akitas, Chow Chows, wolf-hybrids, and any mix of these. This applies to <strong>pets only.</strong></div>
+      <label class="consent" style="margin-top:10px">
+        <input type="checkbox" name="restricted_breed_ack" value="Confirmed - no restricted-breed dog">
+        <span>I confirm no restricted-breed dog (or mix of one) will live in the home.</span>
+      </label>
+    </div>
+
+    <label style="margin-top:18px">Do you have a service or support animal?</label>
+    <div class="yn">
+      <label><input type="radio" name="assistance_animal" value="No"><span>No</span></label>
+      <label><input type="radio" name="assistance_animal" value="Yes"><span>Yes</span></label>
+    </div>
+    <div class="note">Service and support animals are <strong>not pets</strong>. They're never charged a pet fee, and <strong>breed, weight, and size restrictions do not apply to them</strong> — this includes every breed listed above. We ask only so we can accommodate you properly.</div>
+    <div class="note" style="background:#eef2ee;border-left-color:var(--green);color:#2b3b2f">
+      <strong>Minnesota note — service &amp; support animals (Minn. Stat. § 504B.113).</strong> Service and support animals are not pets. Under the Minnesota Human Rights Act and Minn. Stat. § 504B.113, they are handled as reasonable accommodations for a disability, and the breed, weight, and size limits above do not apply. We may request reliable documentation of the disability-related need; we will never ask for your medical records. Knowingly misrepresenting an animal as a service or support animal, or providing fraudulent documentation, is unlawful under Minn. Stat. § 504B.113 and may be grounds for denial.
+    </div>
+  </section>
+
+  <!-- 7. History -->
+  <section class="card">
+    <h2><span class="sec-num">7</span>A few history questions</h2>
+    <p class="hint">Please answer honestly. A "yes" is not an automatic no — we review the full picture. If you answer yes, a short explanation helps.</p>
+
+    <label>Have you ever been evicted or asked to move? <span class="req">*</span></label>
+    <div class="yn">
+      <label><input type="radio" name="evicted" value="No" required><span>No</span></label>
+      <label><input type="radio" name="evicted" value="Yes"><span>Yes</span></label>
+    </div>
+
+    <label style="margin-top:14px">Have you ever caused significant damage to a rental? <span class="req">*</span></label>
+    <div class="yn">
+      <label><input type="radio" name="damage" value="No" required><span>No</span></label>
+      <label><input type="radio" name="damage" value="Yes"><span>Yes</span></label>
+    </div>
+
+    <label style="margin-top:14px">Have you ever refused or withheld rent? <span class="req">*</span></label>
+    <div class="yn">
+      <label><input type="radio" name="rent_refused" value="No" required><span>No</span></label>
+      <label><input type="radio" name="rent_refused" value="Yes"><span>Yes</span></label>
+    </div>
+
+    <label style="margin-top:14px">Do you have a criminal history involving a misdemeanor, gross misdemeanor, or felony? <span class="req">*</span></label>
+    <div class="yn">
+      <label><input type="radio" name="criminal" value="No" required><span>No</span></label>
+      <label><input type="radio" name="criminal" value="Yes"><span>Yes</span></label>
+    </div>
+
+    <label style="margin-top:14px">If you answered "yes" to any of the above, please explain <span class="opt">(optional)</span></label>
+    <textarea name="history_explain"></textarea>
+    <div class="note">Submitting this pre-screen does <strong>not</strong> authorize or trigger a credit or criminal background check. Any screening happens later, only with your written consent, if you're invited to complete a formal application.</div>
+  </section>
+
+  <!-- 8. Deposits & holding -->
+  <section class="card">
+    <h2><span class="sec-num">8</span>Deposits &amp; holding a unit</h2>
+    <p class="hint">Submitting this pre-screen does not reserve the unit, and it does not start any credit or background check.</p>
+    <div class="policy">
+      <p style="margin:0 0 8px"><strong>Security deposits.</strong> We work with [DEPOSIT PARTNERS — to add]. We'll share the details if you move forward.</p>
+      <p style="margin:0"><strong>Want to hold this unit?</strong> You can place a refundable holding fee of <strong>$[AMOUNT]</strong> to take it off the market before your showing. If you're approved, it applies toward your deposit; if you're not approved, it's refunded in full. We'll send payment details after you submit — no payment is collected on this form.</p>
+    </div>
+    <label class="consent">
+      <input type="checkbox" name="holding_fee_interest" value="Yes - interested in a holding fee to reserve before showing">
+      <span>I'd like to place a holding fee to reserve this unit before scheduling a showing. <span class="opt">(Optional — we'll follow up with details.)</span></span>
+    </label>
+  </section>
+
+  <!-- 9. Policies & consent -->
+  <section class="card">
+    <h2><span class="sec-num">9</span>How we work &amp; consent</h2>
+    <p class="hint">Before you submit, a few things every Green Key resident agrees to:</p>
+    <ul class="policy">
+      <li>All tenants carry <strong>renter's insurance.</strong></li>
+      <li>Every resident keeps a current <strong>email and phone number</strong> on file so we can reach you.</li>
+      <li>All residents receive access to a <strong>resident portal</strong> for communication.</li>
+      <li>During the formal application we may ask for <strong>bank statements or pay stubs</strong> to verify income. We'll always be upfront about what we need.</li>
+    </ul>
+    <div class="note" style="background:#eef2ee;border-left-color:var(--green);color:#2b3b2f">
+      <strong>What happens next.</strong> We read every pre-screen ourselves. If your information fits the home, we'll reach out to set up a showing. Serious applicants are then invited to complete the formal application and screening. We're selective on purpose — it's how we keep our homes, and the community in them, well cared for.
+    </div>
+    <label class="consent">
+      <input type="checkbox" name="ssn_ack" value="Agreed - will provide SSN/ITIN at secure screening" required>
+      <span>I understand a valid Social Security number (or ITIN) is required to complete the formal application, screening, and lease, and I'm prepared to provide it through Green Key's secure screening process. <span class="opt">(Not collected on this form.)</span></span>
+    </label>
+    <label class="consent">
+      <input type="checkbox" name="consent" value="Agreed" required>
+      <span>I confirm the information above is true and complete, I understand this pre-screen does not reserve a unit, and I consent to Green Key Properties reviewing it to determine next steps. Qualified applicants will be invited to complete a formal application and screening.</span>
+    </label>
+    <button type="submit" class="submit" id="submitBtn">Submit pre-screen</button>
+    <p class="hint" style="text-align:center;margin-top:12px">Questions? Email <a href="mailto:greenkeypropertiesmn@gmail.com">greenkeypropertiesmn@gmail.com</a> or text (612) 564-3426.</p>
+  </section>
+</form>
+
+<!-- success state -->
+<div class="thanks" id="thanks">
+  <svg class="k" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="17" cy="17" r="10" stroke="#123f2d" stroke-width="3.4"/><circle cx="17" cy="17" r="3.4" fill="#123f2d"/>
+    <path d="M24.2 24.2 L40 40" stroke="#123f2d" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M33 33 h6 M36 36 h5" stroke="#123f2d" stroke-width="3.4" stroke-linecap="round"/>
+  </svg>
+  <h2>Thank you — we've got it.</h2>
+  <p>Your pre-screen is in. If your information fits the home, we'll reach out to arrange a showing and next steps. Because we manage every home personally, please allow a little time for a real person to review it.</p>
+  <p class="hint">— Green Key Properties</p>
+</div>
+
+<footer>
+  Green Key Properties · greenkeypropertiesmn@gmail.com · (612) 564-3426 · <a href="privacy.html">Privacy</a><br>
+  We are an equal-opportunity housing provider. All qualified applicants are considered without regard to race, color, creed, religion, national origin, sex, marital status, disability, familial status, sexual orientation, or status with regard to public assistance.
+</footer>
+</div>
+
+<script>
+  // ---- occupants ----
+  let occN = 0;
+  function addOccupant(first){
+    occN++;
+    const d = document.createElement('div');
+    d.className = 'occupant';
+    d.innerHTML =
+      (first ? '' : '<button type="button" class="rm" onclick="this.parentNode.remove()">remove</button>') +
+      '<div class="row">' +
+        '<div><label>Full name'+(first?' <span class="req">*</span>':'')+'</label><input type="text" name="occupant_name[]" '+(first?'required':'')+'></div>' +
+        '<div><label>Relationship to you</label><input type="text" name="occupant_relationship[]" placeholder="self, spouse, child, roommate…"></div>' +
+      '</div>' +
+      '<label>Adult (18+) working full-time?</label>' +
+      '<div class="inline">' +
+        '<label><input type="radio" name="occupant_ft_'+occN+'" value="Yes, full-time"> Yes, full-time</label>' +
+        '<label><input type="radio" name="occupant_ft_'+occN+'" value="No / part-time"> No / part-time</label>' +
+        '<label><input type="radio" name="occupant_ft_'+occN+'" value="Under 18"> Under 18</label>' +
+      '</div>';
+    document.getElementById('occupants').appendChild(d);
+  }
+  addOccupant(true); // first occupant = applicant
+  document.getElementById('addOcc').addEventListener('click', ()=>addOccupant(false));
+
+  // ---- pets toggle ----
+  function togglePets(hasPets){
+    const t=document.getElementById('petType');
+    const b=document.getElementById('petBreed');
+    if(hasPets){ t.required=true; }
+    else { t.required=false; b.required=false; t.classList.remove('miss'); b.classList.remove('miss'); }
+  }
+  function petTypeChange(){
+    const t=document.getElementById('petType').value;
+    const b=document.getElementById('petBreed');
+    if(t==='Dog'){ b.required=true; } else { b.required=false; b.classList.remove('miss'); }
+  }
+
+  // ---- live income calculator ----
+  const rent = document.getElementById('rent');
+  const income = document.getElementById('income');
+  const readout = document.getElementById('readout');
+  const ratioEl = document.getElementById('ratio');
+  const ratioMsg = document.getElementById('ratioMsg');
+  const ratioField = document.getElementById('ratioField');
+  const THRESHOLD = 3;
+  function calc(){
+    const r = parseFloat(rent.value), i = parseFloat(income.value);
+    readout.className = 'readout';
+    if(!r || !i || r<=0){ ratioEl.textContent='—'; ratioMsg.textContent="Enter the unit's rent (section 2) and your household income to see where you stand."; ratioField.value=''; return; }
+    const ratio = i / r;
+    ratioEl.textContent = ratio.toFixed(2) + '×';
+    ratioField.value = ratio.toFixed(2);
+    if(ratio >= THRESHOLD){
+      readout.className = 'readout ok';
+      ratioMsg.textContent = 'Your household income meets our 3× requirement. Great — please finish and submit.';
+    } else {
+      readout.className = 'readout short';
+      ratioMsg.textContent = 'This is below our 3× requirement. You are welcome to submit, but the home may not be the right financial fit — a co-signer or a lower-rent unit could help.';
+    }
+  }
+  rent.addEventListener('input', calc);
+  income.addEventListener('input', calc);
+
+  // ---- phone validation (mirrors the realtor pages) ----
+  function isValidUSPhone(raw){
+    var d=String(raw||'').replace(/\D/g,'');
+    if(d.length===11 && d.charAt(0)==='1') d=d.slice(1);
+    if(d.length!==10) return false;
+    if(+d.charAt(0)<2 || +d.charAt(3)<2) return false;
+    if(d.charAt(1)==='1' && d.charAt(2)==='1') return false;
+    if(d.slice(3,6)==='555') return false;
+    if(/^(\d)\1{9}$/.test(d)) return false;
+    return true;
+  }
+  document.getElementById('phone').addEventListener('input', function(){
+    var v=this.value.replace(/[^0-9]/g,'').slice(0,10);
+    if(v.length>=7){ v=v.slice(0,3)+'-'+v.slice(3,6)+'-'+v.slice(6); }
+    else if(v.length>=4){ v=v.slice(0,3)+'-'+v.slice(3); }
+    this.value=v;
+    this.classList.remove('input-error'); document.getElementById('phoneError').classList.remove('visible');
+  });
+
+  // ---- submit (Formspree AJAX) ----
+  const form = document.getElementById('gkForm');
+  const btn = document.getElementById('submitBtn');
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    // basic required check with visual flag
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(el=>{
+      const bad = (el.type==='radio' || el.type==='checkbox')
+        ? !form.querySelector('[name="'+el.name+'"]:checked')
+        : !el.value.trim();
+      if(bad){ ok=false; if(el.classList) el.classList.add('miss'); } else if(el.classList){ el.classList.remove('miss'); }
+    });
+    if(!ok){ alert('Please complete the highlighted required fields.'); return; }
+    var ph=document.getElementById('phone');
+    if(!isValidUSPhone(ph.value)){ ph.classList.add('input-error'); document.getElementById('phoneError').classList.add('visible'); ph.focus(); return; }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    try{
+      const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+      if(res.ok){
+        form.style.display='none';
+        document.getElementById('thanks').style.display='block';
+        window.scrollTo({top:0,behavior:'smooth'});
+      } else { throw new Error('bad response'); }
+    }catch(err){
+      btn.disabled=false; btn.textContent='Submit pre-screen';
+      alert('Something went wrong sending your pre-screen. Please email greenkeypropertiesmn@gmail.com or text (612) 564-3426 and we\'ll help.');
+    }
+  });
+</script>
+</body>
+</html>
