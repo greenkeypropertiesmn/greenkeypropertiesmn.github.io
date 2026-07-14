@@ -464,17 +464,29 @@
   const btn = document.getElementById('submitBtn');
   form.addEventListener('submit', async function(e){
     e.preventDefault();
-    // basic required check with visual flag
-    let ok = true;
+    // Validate, and remember the FIRST field that needs fixing so we can jump to it.
+    let firstBad = null;
     form.querySelectorAll('[required]').forEach(el=>{
       const bad = (el.type==='radio' || el.type==='checkbox')
         ? !form.querySelector('[name="'+el.name+'"]:checked')
         : !el.value.trim();
-      if(bad){ ok=false; if(el.classList) el.classList.add('miss'); } else if(el.classList){ el.classList.remove('miss'); }
+      if(bad){ if(!firstBad) firstBad = el; if(el.classList) el.classList.add('miss'); }
+      else if(el.classList){ el.classList.remove('miss'); }
     });
-    if(!ok){ alert('Please complete the highlighted required fields.'); return; }
+    // Phone must be a real US number (not just non-empty).
     var ph=document.getElementById('phone');
-    if(!isValidUSPhone(ph.value)){ ph.classList.add('input-error'); document.getElementById('phoneError').classList.add('visible'); ph.focus(); return; }
+    if(!isValidUSPhone(ph.value)){
+      ph.classList.add('input-error'); document.getElementById('phoneError').classList.add('visible');
+      if(!firstBad || (ph.compareDocumentPosition(firstBad) & Node.DOCUMENT_POSITION_FOLLOWING)) firstBad = ph;
+    } else {
+      ph.classList.remove('input-error'); document.getElementById('phoneError').classList.remove('visible');
+    }
+    // Jump straight to the first thing that needs attention — no hunting for the red box.
+    if(firstBad){
+      try { firstBad.scrollIntoView({behavior:'smooth', block:'center'}); } catch(_) { firstBad.scrollIntoView(); }
+      setTimeout(function(){ try { firstBad.focus({preventScroll:true}); } catch(_) { try{ firstBad.focus(); }catch(e){} } }, 350);
+      return;
+    }
     btn.disabled = true; btn.textContent = 'Sending…';
     try{
       const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
