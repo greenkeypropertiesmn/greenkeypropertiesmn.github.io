@@ -7,112 +7,161 @@
 <title>Green Key Properties — Rental Pre-Screen</title>
 <style>
   :root{
-    --green:#123f2d;        /* deep green */
-    --green-2:#0c2e21;      /* darker green */
-    --green-line:#2f5c48;
-    --gold:#c39a3f;         /* brass key gold */
-    --gold-soft:#e8d9ac;
-    --cream:#f7f5ee;
+    --green:#367C2B;        /* John Deere farm green */
+    --green-d:#2c6a20;      /* darker green for text */
+    --green-line:#4a8b3a;
+    --wheat:#c19a3f;        /* wheat gold */
+    --wheat-d:#b8863b;
+    --wheat-soft:#ecdcb4;
+    --cream:#f6f1e4;        /* warm cream page */
     --paper:#ffffff;
-    --ink:#20281f;
-    --muted:#5f6b5c;
-    --ok:#1f7a4d;
+    --ink:#2a2c22;
+    --muted:#6a6f5e;
+    --ok:#2f7a3f;
+    --ok-bg:#e9f3e0;
     --warn:#9a5b12;
     --warn-bg:#fdf3e2;
-    --ok-bg:#e9f5ee;
     --radius:12px;
-    --shadow:0 2px 10px rgba(18,63,45,.08);
+    --shadow:0 2px 12px rgba(54,124,43,.09);
+    --serif:Georgia,'Times New Roman',serif;
   }
   *{box-sizing:border-box}
   body{
     margin:0;background:var(--cream);color:var(--ink);
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.55;
+    font-size:17px;line-height:1.6;border-top:5px solid var(--green);
   }
-  .wrap{max-width:760px;margin:0 auto;padding:0 18px 80px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px 90px}
+  /* progress bar */
+  .progress{position:sticky;top:0;z-index:60;background:var(--cream);border-bottom:1px solid #e6ddc7;padding:7px 18px 5px}
+  .progress .track{max-width:760px;margin:0 auto;height:8px;background:#e6ddc7;border-radius:5px;overflow:hidden}
+  .progress .fill{height:100%;width:0;background:var(--green);transition:width .35s ease}
+  .progress .lbl{max-width:760px;margin:3px auto 0;font-size:.72rem;color:var(--muted);text-align:right;letter-spacing:.3px}
   /* header */
-  header{background:linear-gradient(160deg,var(--green) 0%,var(--green-2) 100%);color:#fff;padding:38px 0 30px;border-bottom:3px solid var(--gold)}
-  .brand{display:flex;align-items:center;gap:14px;max-width:760px;margin:0 auto;padding:0 18px}
-  .key{width:44px;height:44px;flex:0 0 44px}
-  .brand h1{font-size:1.5rem;letter-spacing:.5px;margin:0;font-weight:700}
-  .brand .sub{color:var(--gold-soft);font-size:.82rem;letter-spacing:2px;text-transform:uppercase;margin-top:2px}
-  .lede{max-width:760px;margin:22px auto 0;padding:0 18px;color:#eef4ef;font-size:1.02rem}
-  .lede strong{color:#fff}
+  header{background:var(--cream);padding:26px 0 4px}
+  .header-inner{max-width:760px;margin:0 auto;padding:0 18px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:14px}
+  .logo .mark{width:60px;height:70px;flex:0 0 60px}
+  .logo h1{font-family:var(--serif);font-size:1.72rem;color:var(--green);margin:0;font-weight:600;letter-spacing:.3px;line-height:1}
+  .logo .sub{font-family:var(--serif);font-size:.7rem;letter-spacing:3px;color:var(--wheat-d);text-transform:uppercase;margin-top:4px}
+  .eho{display:flex;align-items:center;gap:7px;color:var(--green-d);flex:0 0 auto}
+  .eho .h{width:26px;height:24px;flex:0 0 26px}
+  .eho span{font-family:var(--serif);font-size:.56rem;line-height:1.25;letter-spacing:.4px;text-transform:uppercase}
+  @media(max-width:520px){.eho span{display:none}}
+  .wheat-rule{max-width:760px;margin:16px auto 0;padding:0 18px;display:flex;align-items:center;gap:12px}
+  .wheat-rule .ln{flex:1;height:1px;background:var(--wheat)}
+  .wheat-rule .wh{width:24px;height:37px;flex:0 0 24px}
+  .lede{max-width:760px;margin:18px auto 0;padding:0 18px;color:var(--ink);font-size:1.05rem}
+  .lede strong{color:var(--green-d)}
   /* card */
-  .card{background:var(--paper);border:1px solid #e7e4d7;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin-top:26px}
-  .card h2{font-size:1.06rem;margin:0 0 4px;color:var(--green)}
-  .card .hint{color:var(--muted);font-size:.86rem;margin:0 0 16px}
-  .sec-num{display:inline-block;background:var(--gold);color:#3a2d07;font-weight:700;border-radius:50%;width:22px;height:22px;text-align:center;font-size:.8rem;line-height:22px;margin-right:8px}
-  label{display:block;font-weight:600;font-size:.9rem;margin:14px 0 5px}
-  label .req{color:var(--gold);font-weight:700}
-  .opt{color:var(--muted);font-weight:500;font-size:.8rem}
+  .card{background:var(--paper);border:1px solid #e8e2d1;border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 26px 28px;margin-top:24px}
+  .card h2{font-family:var(--serif);font-size:1.22rem;margin:0 0 6px;color:var(--green);font-weight:600;display:flex;align-items:center}
+  .card .hint{color:var(--muted);font-size:.9rem;margin:0 0 18px}
+  .sec-num{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:#fff;font-weight:700;border-radius:50%;width:26px;height:26px;font-size:.85rem;margin-right:10px;font-family:-apple-system,sans-serif;flex:0 0 26px}
+  label{display:block;font-weight:600;font-size:.96rem;margin:16px 0 6px}
+  label .req{color:var(--wheat-d);font-weight:700}
+  .opt{color:var(--muted);font-weight:500;font-size:.82rem}
   input[type=text],input[type=email],input[type=tel],input[type=number],input[type=date],select,textarea{
-    width:100%;padding:11px 12px;border:1px solid #cfd6cb;border-radius:8px;font-size:1rem;background:#fff;color:var(--ink);font-family:inherit
+    width:100%;padding:13px;border:1px solid #cdd4c4;border-radius:9px;font-size:1rem;background:#fff;color:var(--ink);font-family:inherit
   }
-  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(18,63,45,.12)}
-  textarea{min-height:70px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(54,124,43,.14)}
+  textarea{min-height:74px;resize:vertical}
   .row{display:flex;gap:14px;flex-wrap:wrap}
   .row > div{flex:1;min-width:180px}
-  .checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin-top:8px}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:8px}
   @media(max-width:560px){.checks{grid-template-columns:1fr}}
-  .checks label,.inline label{font-weight:500;display:flex;align-items:flex-start;gap:8px;margin:0;font-size:.92rem;cursor:pointer}
+  .checks label,.inline label{font-weight:500;display:flex;align-items:flex-start;gap:9px;margin:0;font-size:.96rem;cursor:pointer}
   .checks input,.inline input{margin-top:3px;width:auto}
-  .inline{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px}
-  .yn{display:flex;gap:10px;margin-top:6px}
-  .yn label{border:1px solid #cfd6cb;border-radius:8px;padding:8px 16px;font-weight:600;cursor:pointer;font-size:.9rem;background:#fff}
+  .inline{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px}
+  .yn{display:flex;gap:10px;margin-top:8px}
+  .yn label{border:1px solid #cdd4c4;border-radius:9px;padding:10px 18px;font-weight:600;cursor:pointer;font-size:.95rem;background:#fff}
   .yn input{display:none}
   .yn input:checked + span{color:var(--green)}
   .yn label:has(input:checked){border-color:var(--green);background:var(--ok-bg)}
-  .occupant{border:1px dashed #cbd3c6;border-radius:8px;padding:14px;margin-top:12px;position:relative}
-  .occupant .rm{position:absolute;top:8px;right:10px;background:none;border:none;color:var(--warn);cursor:pointer;font-size:.82rem}
-  .addbtn{margin-top:12px;background:#fff;border:1px solid var(--green);color:var(--green);padding:9px 16px;border-radius:8px;font-weight:600;cursor:pointer;font-size:.9rem}
+  .occupant{border:1px dashed #ccd3c0;border-radius:9px;padding:16px;margin-top:14px;position:relative;background:#fcfbf6}
+  .occupant .rm{position:absolute;top:9px;right:11px;background:none;border:none;color:var(--warn);cursor:pointer;font-size:.82rem}
+  .addbtn{margin-top:14px;background:#fff;border:1px solid var(--green);color:var(--green);padding:11px 18px;border-radius:9px;font-weight:600;cursor:pointer;font-size:.95rem}
   .addbtn:hover{background:var(--ok-bg)}
   /* calculator */
-  .calc{background:var(--green-2);border-radius:10px;padding:18px;margin-top:18px;color:#eaf2ec}
-  .calc label{color:#dbe7de}
-  .calc input{background:#fff;color:var(--ink)}
-  .readout{margin-top:16px;padding:14px 16px;border-radius:8px;background:#0a271c;border:1px solid var(--green-line);text-align:center}
-  .readout .ratio{font-size:1.9rem;font-weight:800;letter-spacing:.5px}
-  .readout .msg{font-size:.9rem;margin-top:4px}
-  .readout.ok{background:var(--ok-bg);color:#0e3b25;border-color:#bfe0cd}
+  .calc{background:#eef4e8;border:1px solid #d4e2c9;border-radius:10px;padding:20px;margin-top:18px;color:var(--ink)}
+  .calc label{color:var(--green-d)}
+  .readout{margin-top:16px;padding:16px;border-radius:9px;background:#e4ecda;border:1px solid #cfe0c2;text-align:center}
+  .readout .ratio{font-size:2rem;font-weight:800;letter-spacing:.5px;color:var(--green-d)}
+  .readout .msg{font-size:.92rem;margin-top:4px;color:var(--ink)}
+  .readout.ok{background:var(--ok-bg);border-color:#bfe0a8}
   .readout.ok .ratio{color:var(--ok)}
-  .readout.short{background:var(--warn-bg);color:#5a3a0d;border-color:#f0dcb8}
+  .readout.short{background:var(--warn-bg);border-color:#f0dcb8}
   .readout.short .ratio{color:var(--warn)}
-  /* carve-out note */
-  .note{background:var(--warn-bg);border-left:3px solid var(--gold);padding:11px 14px;border-radius:6px;font-size:.86rem;color:#5a4a24;margin-top:10px}
-  .policy{font-size:.9rem;color:var(--ink);background:var(--cream);border-radius:8px;padding:14px 16px;margin-top:6px}
-  .policy li{margin:6px 0}
-  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:.9rem}
-  .consent input{margin-top:3px}
-  .submit{margin-top:24px;width:100%;background:var(--gold);color:#2e2405;border:none;padding:15px;border-radius:10px;font-size:1.05rem;font-weight:700;letter-spacing:.4px;cursor:pointer}
-  .submit:hover{background:#b98f34}
+  .readout.short .msg{color:#5a3a0d}
+  /* notes */
+  .note{background:var(--warn-bg);border-left:3px solid var(--wheat);padding:12px 15px;border-radius:6px;font-size:.9rem;color:#5a4a24;margin-top:12px}
+  .policy{font-size:.94rem;color:var(--ink);background:#faf7ef;border:1px solid #ece4d2;border-radius:9px;padding:16px 18px;margin-top:6px}
+  .policy li{margin:7px 0}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin-top:16px;font-size:.94rem}
+  .consent input{margin-top:3px;width:auto}
+  .submit{margin-top:26px;width:100%;background:var(--green);color:#fff;border:none;padding:16px;border-radius:11px;font-size:1.08rem;font-weight:700;letter-spacing:.3px;cursor:pointer}
+  .submit:hover{background:var(--green-d)}
   .submit:disabled{opacity:.55;cursor:not-allowed}
-  footer{max-width:760px;margin:34px auto 0;padding:0 18px;color:var(--muted);font-size:.82rem;text-align:center}
+  footer{max-width:760px;margin:36px auto 0;padding:22px 18px 0;color:var(--muted);font-size:.84rem;text-align:center;border-top:1px solid #e6ddc7}
   footer a{color:var(--green)}
-  .thanks{display:none;background:var(--paper);border:1px solid #e7e4d7;border-radius:var(--radius);box-shadow:var(--shadow);padding:40px 28px;margin-top:26px;text-align:center}
-  .thanks h2{color:var(--green);margin-top:0}
-  .thanks .k{width:52px;height:52px;margin:0 auto 10px}
-  .miss{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.14)!important}
-  .field-error{display:none;color:var(--warn);font-size:.82rem;margin:5px 0 0}
+  .foot-eho{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px;color:var(--green-d)}
+  .foot-eho .h{width:24px;height:22px}
+  .foot-eho b{font-family:var(--serif);font-size:.78rem;letter-spacing:.5px;font-weight:600}
+  .thanks{display:none;background:var(--paper);border:1px solid #e8e2d1;border-radius:var(--radius);box-shadow:var(--shadow);padding:44px 28px;margin-top:26px;text-align:center}
+  .thanks h2{font-family:var(--serif);color:var(--green);margin-top:0}
+  .thanks .k{width:56px;height:64px;margin:0 auto 12px}
+  .miss{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.16)!important}
+  .field-error{display:none;color:var(--warn);font-size:.84rem;margin:6px 0 0}
   .field-error.visible{display:block}
-  input.input-error{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.14)!important}
+  input.input-error{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.16)!important}
 </style>
 </head>
 <body>
+<div class="progress"><div class="track"><div class="fill" id="pf"></div></div><div class="lbl" id="pl">0% complete</div></div>
 <header>
-  <div class="brand">
-    <svg class="key" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="17" cy="17" r="10" stroke="#c39a3f" stroke-width="3.4"/>
-      <circle cx="17" cy="17" r="3.4" fill="#c39a3f"/>
-      <path d="M24.2 24.2 L40 40" stroke="#c39a3f" stroke-width="3.4" stroke-linecap="round"/>
-      <path d="M33 33 h6 M36 36 h5" stroke="#c39a3f" stroke-width="3.4" stroke-linecap="round"/>
-    </svg>
-    <div>
-      <h1>GREEN KEY PROPERTIES</h1>
-      <div class="sub">Rental Pre-Screen</div>
+  <div class="header-inner">
+    <div class="logo">
+      <svg class="mark" viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="50,8 93.3,33 93.3,83 50,108 6.7,83 6.7,33" fill="#eef4e8" stroke="#367C2B" stroke-width="2"/>
+        <path d="M35,51 L35,33 L50,22 L65,33 L65,51 Z" fill="#ffffff" stroke="#367C2B" stroke-width="2.4" stroke-linejoin="round"/>
+        <circle cx="50" cy="40" r="4.5" fill="#367C2B"/>
+        <path d="M46.5,43 L53.5,43 L52,48 L48,48 Z" fill="#367C2B"/>
+        <rect x="46" y="51" width="8" height="47" rx="3" fill="#367C2B"/>
+        <rect x="54" y="80" width="9" height="5" fill="#367C2B"/>
+        <rect x="54" y="90" width="6" height="5" fill="#367C2B"/>
+        <circle cx="50" cy="96" r="4" fill="#367C2B"/>
+      </svg>
+      <div>
+        <h1>Green Key</h1>
+        <div class="sub">Properties</div>
+      </div>
+    </div>
+    <div class="eho">
+      <svg class="h" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6,30 L6,16 L20,6 L34,16 L34,30 Z" fill="none" stroke="#2c6a20" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="12" y1="20" x2="28" y2="20" stroke="#2c6a20" stroke-width="2.4"/>
+        <line x1="12" y1="25" x2="28" y2="25" stroke="#2c6a20" stroke-width="2.4"/>
+      </svg>
+      <span>Equal Housing<br>Opportunity</span>
     </div>
   </div>
-  <p class="lede">Thank you for your interest in one of our homes. We're a <strong>small, hands-on management company</strong>, and we're intentional about who we welcome into our buildings. This short pre-screen is the first step — <strong>we schedule showings only after it's completed.</strong> It helps us match the right home to the right resident, and it saves you a trip if a unit isn't the right fit. Everything below takes about five minutes.</p>
+  <div class="wheat-rule">
+    <div class="ln"></div>
+    <svg class="wh" viewBox="0 0 26 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="13" y1="39" x2="13" y2="16" stroke="#b8863b" stroke-width="1.8"/>
+      <ellipse cx="13" cy="14" rx="2.4" ry="5.5" fill="#c19a3f"/>
+      <ellipse cx="8" cy="20" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(-35 8 20)"/>
+      <ellipse cx="18" cy="20" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(35 18 20)"/>
+      <ellipse cx="8" cy="25" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(-35 8 25)"/>
+      <ellipse cx="18" cy="25" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(35 18 25)"/>
+      <ellipse cx="8" cy="30" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(-35 8 30)"/>
+      <ellipse cx="18" cy="30" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(35 18 30)"/>
+      <ellipse cx="8" cy="35" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(-35 8 35)"/>
+      <ellipse cx="18" cy="35" rx="2.4" ry="5.5" fill="#c19a3f" transform="rotate(35 18 35)"/>
+    </svg>
+    <div class="ln"></div>
+  </div>
+  <p class="lede">Thank you for your interest in one of our homes. We're a <strong>small, hands-on management company</strong>, and we're intentional about who we welcome. This short pre-screen is the first step — <strong>we schedule showings only after it's completed.</strong> It helps us match the right home to the right resident, and it saves you a trip if a unit isn't the right fit. Everything below takes about five minutes.</p>
 </header>
 
 <div class="wrap">
@@ -361,10 +410,15 @@
 
 <!-- success state -->
 <div class="thanks" id="thanks">
-  <svg class="k" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="17" cy="17" r="10" stroke="#123f2d" stroke-width="3.4"/><circle cx="17" cy="17" r="3.4" fill="#123f2d"/>
-    <path d="M24.2 24.2 L40 40" stroke="#123f2d" stroke-width="3.4" stroke-linecap="round"/>
-    <path d="M33 33 h6 M36 36 h5" stroke="#123f2d" stroke-width="3.4" stroke-linecap="round"/>
+  <svg class="k" viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <polygon points="50,8 93.3,33 93.3,83 50,108 6.7,83 6.7,33" fill="#eef4e8" stroke="#367C2B" stroke-width="2"/>
+    <path d="M35,51 L35,33 L50,22 L65,33 L65,51 Z" fill="#ffffff" stroke="#367C2B" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="50" cy="40" r="4.5" fill="#367C2B"/>
+    <path d="M46.5,43 L53.5,43 L52,48 L48,48 Z" fill="#367C2B"/>
+    <rect x="46" y="51" width="8" height="47" rx="3" fill="#367C2B"/>
+    <rect x="54" y="80" width="9" height="5" fill="#367C2B"/>
+    <rect x="54" y="90" width="6" height="5" fill="#367C2B"/>
+    <circle cx="50" cy="96" r="4" fill="#367C2B"/>
   </svg>
   <h2>Thank you — we've got it.</h2>
   <p>Your pre-screen is in. If your information fits the home, we'll reach out to arrange a showing and next steps. Because we manage every home personally, please allow a little time for a real person to review it.</p>
@@ -372,6 +426,14 @@
 </div>
 
 <footer>
+  <div class="foot-eho">
+    <svg class="h" viewBox="0 0 40 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M6,30 L6,16 L20,6 L34,16 L34,30 Z" fill="none" stroke="#2c6a20" stroke-width="2" stroke-linejoin="round"/>
+      <line x1="12" y1="20" x2="28" y2="20" stroke="#2c6a20" stroke-width="2.4"/>
+      <line x1="12" y1="25" x2="28" y2="25" stroke="#2c6a20" stroke-width="2.4"/>
+    </svg>
+    <b>Equal Housing Opportunity</b>
+  </div>
   Green Key Properties · greenkeypropertiesmn@gmail.com · (612) 564-3426 · <a href="privacy.html">Privacy</a><br>
   We are an equal-opportunity housing provider. All qualified applicants are considered without regard to race, color, creed, religion, national origin, sex, marital status, disability, familial status, sexual orientation, or status with regard to public assistance.
 </footer>
@@ -500,6 +562,25 @@
       alert('Something went wrong sending your pre-screen. Please email greenkeypropertiesmn@gmail.com or text (612) 564-3426 and we\'ll help.');
     }
   });
+
+  // ---- progress bar: shows how far through the required fields you are ----
+  function updateProgress(){
+    const seen = {}; let done = 0, total = 0;
+    form.querySelectorAll('[required]').forEach(el=>{
+      if(el.type==='radio' || el.type==='checkbox'){
+        if(seen[el.name]) return; seen[el.name]=1;
+        total++; if(form.querySelector('[name="'+el.name+'"]:checked')) done++;
+      } else {
+        total++; if(el.value.trim()) done++;
+      }
+    });
+    const pct = total ? Math.round(done/total*100) : 0;
+    document.getElementById('pf').style.width = pct + '%';
+    document.getElementById('pl').textContent = pct + '% complete';
+  }
+  form.addEventListener('input', updateProgress);
+  form.addEventListener('change', updateProgress);
+  updateProgress();
 </script>
 </body>
 </html>
