@@ -68,10 +68,11 @@
   textarea{min-height:74px;resize:vertical}
   .row{display:flex;gap:14px;flex-wrap:wrap}
   .row > div{flex:1;min-width:180px}
+  input[type=checkbox]{width:20px;height:20px;min-width:20px;accent-color:var(--green);cursor:pointer;margin-top:2px;flex:0 0 auto}
   .checks{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-top:8px}
   @media(max-width:560px){.checks{grid-template-columns:1fr}}
   .checks label,.inline label{font-weight:500;display:flex;align-items:flex-start;gap:9px;margin:0;font-size:.96rem;cursor:pointer}
-  .checks input,.inline input{margin-top:3px;width:auto}
+  .checks input,.inline input{margin-top:2px}
   .inline{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px}
   .yn{display:flex;gap:10px;margin-top:8px}
   .yn label{border:1px solid #cdd4c4;border-radius:9px;padding:10px 18px;font-weight:600;cursor:pointer;font-size:.95rem;background:#fff}
@@ -98,7 +99,7 @@
   .policy{font-size:.94rem;color:var(--ink);background:#faf7ef;border:1px solid #ece4d2;border-radius:9px;padding:16px 18px;margin-top:6px}
   .policy li{margin:7px 0}
   .consent{display:flex;gap:11px;align-items:flex-start;margin-top:16px;font-size:.94rem}
-  .consent input{margin-top:3px;width:auto}
+  .consent input{margin-top:2px;width:22px;height:22px;min-width:22px}
   .submit{margin-top:26px;width:100%;background:var(--green);color:#fff;border:none;padding:16px;border-radius:11px;font-size:1.08rem;font-weight:700;letter-spacing:.3px;cursor:pointer}
   .submit:hover{background:var(--green-d)}
   .submit:disabled{opacity:.55;cursor:not-allowed}
