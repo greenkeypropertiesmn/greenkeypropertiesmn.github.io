@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Spring — 14 E Central, Springfield MN | Green Key Properties</title>
-<meta name="description" content="The Spring at 14 E Central Street in downtown Springfield, Minnesota — five renewed residences over main street, with room for something good at the sidewalk.">
+<title>The Spring | 14 E Central, Springfield MN | Green Key Properties</title>
+<meta name="description" content="The Spring at 14 E Central Street in downtown Springfield, Minnesota, five renewed residences over main street, with room for something good at the sidewalk.">
 <link rel="canonical" href="https://greenkeypropertiesmn.com/the-spring/">
 <meta name="theme-color" content="#367C2B">
-<meta property="og:title" content="The Spring — Downtown Springfield, MN">
+<meta property="og:title" content="The Spring | Downtown Springfield, MN">
 <meta property="og:description" content="Five residences over main street at 14 E Central. A quieter kind of downtown living.">
 <meta property="og:url" content="https://greenkeypropertiesmn.com/the-spring/">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#1d2b4a">
 <style>
 :root{
-  --green:#367C2B; --green-d:#2c6a20; --green-soft:#e8f2e4;
-  --wheat:#c19a3f; --wheat-d:#9a7428; --wheat-soft:#f3e8cf;
-  --cream:#f7f3ea; --paper:#fffef9; --ink:#2a2c22; --muted:#6a6f5e;
-  --line:#e4dcc8; --radius:14px;
-  --serif:Georgia,"Iowan Old Style","Palatino Linotype",Palatino,serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --green:#1d2b4a; --green-d:#141f38; --green-soft:#e6eef7;
+  --wheat:#b5543a; --wheat-d:#a2482f; --wheat-soft:#f6e3da;
+  --cream:#faf6f0; --paper:#ffffff; --ink:#1b2236; --muted:#5d6475;
+  --line:#e7ddd2; --radius:16px; --sky:#8fc1e3; --blossom:#f2c4c0; --gold:#e3b04b;
+  --serif:"Fraunces",Georgia,"Iowan Old Style",serif;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -83,6 +86,54 @@ img{max-width:100%;display:block}
 .fine{font-size:.84rem;color:var(--muted);margin-top:14px}
 footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:.84rem;color:var(--muted)}
 footer a{color:var(--muted)}
+
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:16px}
+.feat div{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.feat svg{color:var(--green);display:block;margin-bottom:8px}
+.feat strong{display:block;font-family:var(--serif);color:var(--green-d);margin-bottom:4px}
+.feat span{font-size:.92rem;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.facts div{border-top:2px solid var(--wheat-d);padding-top:8px;font-size:.9rem}
+.facts b{display:block;font-family:var(--serif);font-size:1.15rem;color:var(--green)}
+.newsq{margin:14px 0 0;padding-left:14px;border-left:3px solid var(--wheat-d);font-style:italic}
+.tl{display:flex;gap:0;margin-top:18px;position:relative}
+.tl:before{content:"";position:absolute;left:8%;right:8%;top:11px;height:2px;background:var(--line)}
+.tl div{flex:1;text-align:center;position:relative;font-size:.88rem;padding:0 6px}
+.tl i{display:block;width:22px;height:22px;border-radius:50%;background:var(--paper);border:3px solid var(--green);margin:0 auto 8px}
+.tl div:last-child i{background:var(--green)}
+.tl b{display:block;font-family:var(--serif);color:var(--green-d)}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.strip figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.strip img{width:100%;height:220px;object-fit:cover;object-position:top;display:block}
+.strip figcaption{padding:8px 10px;font-size:.8rem;color:var(--muted)}
+.map{width:100%;height:300px;border:1px solid var(--line);border-radius:var(--radius);margin-top:14px}
+.credit{font-size:.75rem;color:var(--muted);margin-top:6px}
+@media(max-width:640px){.strip{grid-template-columns:1fr}.tl{flex-direction:column;gap:14px}.tl:before{display:none}}
+
+.section{margin-top:72px}
+.section h2{font-size:2rem;color:var(--green);letter-spacing:-.5px}
+.eyebrow{color:var(--wheat)!important;font-family:var(--sans)!important;font-weight:600}
+.btn-green{background:var(--wheat)!important;color:#fff!important;border-color:var(--wheat)!important}
+.soft-panel{background:linear-gradient(135deg,#fff 0%,var(--green-soft) 100%)!important;border:1px solid #d6e3f0!important}
+.cta{background:var(--green)!important;color:#f3ede4!important}
+.cta h2{color:#fff!important}.cta a{color:var(--blossom)!important}
+.topbar{background:var(--green)!important;border:0!important}
+.topbar *{color:#f3ede4!important}
+.sp-hero{position:relative;background:radial-gradient(120% 90% at 85% 0%,#2c4470 0%,var(--green) 55%,var(--green-d) 100%);color:#f3ede4;overflow:hidden}
+.sp-hero .in{max-width:880px;margin:0 auto;padding:72px 22px 0;position:relative;z-index:2}
+.sp-hero .kick{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:var(--sky);font-weight:600}
+.sp-mark{font-family:var(--serif);font-weight:600;font-size:clamp(3.6rem,13vw,7rem);line-height:.95;letter-spacing:-2px;margin:14px 0 6px;color:#fff}
+.sp-mark em{font-style:italic;font-weight:400;color:var(--blossom)}
+.sp-hero .addr{color:var(--gold);letter-spacing:1px;font-weight:500}
+.sp-hero .lede{font-size:1.15rem;max-width:560px;color:#dfe6f1}
+.sp-hero .btn-soft{background:transparent!important;color:#fff!important;border-color:rgba(255,255,255,.35)!important}
+.sp-hero svg.scene{display:block;width:100%;height:auto;margin-top:36px}
+.feat svg{color:var(--wheat)!important}
+.feat div{border-top:3px solid var(--sky)!important}
+.facts div{border-top-color:var(--wheat)!important}
+.tl i{border-color:var(--wheat)!important}.tl div:last-child i{background:var(--wheat)!important}
+.strip img{filter:sepia(.25) saturate(.9)}
+.newsq{border-left-color:var(--sky)!important}
 </style>
 </head>
 <body>
@@ -99,27 +150,43 @@ footer a{color:var(--muted)}
   </div>
 </div>
 
-<section class="hero">
-  <p class="eyebrow">Downtown Springfield</p>
-  <h1>The Spring</h1>
+<section class="sp-hero"><div class="in">
+  <p class="kick">Downtown Springfield, Minnesota</p>
+  <h1 class="sp-mark">The <em>Spring</em></h1>
   <p class="addr">14 E Central Street</p>
-  <p class="lede">A restored main-street building with five renewed residences upstairs — the kind of place you can text a neighbor about after coffee, without needing a sales pitch.</p>
+  <p class="lede">A restored main-street building with five renewed residences upstairs, the kind of place you can text a neighbor about after coffee, without needing a sales pitch.</p>
   <div class="sharebar">
     <button type="button" class="btn btn-green" id="shareBtn">Share with someone</button>
     <button type="button" class="btn btn-soft" id="copyBtn">Copy link</button>
-    <a class="btn btn-soft" href="mailto:?subject=The%20Spring%20in%20downtown%20Springfield&body=Thought%20of%20you%20%E2%80%94%20The%20Spring%20at%2014%20E%20Central%20in%20Springfield.%0A%0Ahttps%3A%2F%2Fgreenkeypropertiesmn.com%2Fthe-spring%2F">Email this page</a>
+    <a class="btn btn-soft" href="mailto:?subject=The%20Spring%20in%20downtown%20Springfield&body=Thought%20of%20you%2C%20The%20Spring%20at%2014%20E%20Central%20in%20Springfield.%0A%0Ahttps%3A%2F%2Fgreenkeypropertiesmn.com%2Fthe-spring%2F">Email this page</a>
   </div>
   <div class="toast" id="toast" role="status"></div>
-</section>
+</div><svg class="scene" viewBox="0 0 900 260" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration (not the actual building): a brick main-street storefront at spring dusk">
+  <defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc1e3" stop-opacity=".55"/><stop offset="1" stop-color="#8fc1e3" stop-opacity=".05"/></linearGradient></defs>
+  <circle cx="760" cy="60" r="34" fill="#e3b04b" opacity=".85"/>
+  <g fill="#f2c4c0" opacity=".8"><circle cx="90" cy="70" r="5"/><circle cx="130" cy="40" r="4"/><circle cx="610" cy="50" r="4"/><circle cx="840" cy="120" r="5"/><circle cx="50" cy="130" r="3"/></g>
+  <rect x="300" y="60" width="300" height="170" fill="#b5543a"/>
+  <rect x="300" y="52" width="300" height="12" fill="#8f3f2a"/>
+  <g fill="#f6d9a6"><rect x="325" y="80" width="40" height="52" rx="2"/><rect x="385" y="80" width="40" height="52" rx="2"/><rect x="475" y="80" width="40" height="52" rx="2"/><rect x="535" y="80" width="40" height="52" rx="2"/></g>
+  <rect x="300" y="146" width="300" height="6" fill="#8f3f2a"/>
+  <g fill="#1b2236" opacity=".55"><rect x="320" y="162" width="110" height="68"/><rect x="470" y="162" width="110" height="68"/></g>
+  <rect x="436" y="168" width="28" height="62" fill="#e3b04b" opacity=".9"/>
+  <rect x="120" y="120" width="160" height="110" fill="#2a3b60"/><rect x="620" y="105" width="170" height="125" fill="#2a3b60"/>
+  <rect x="0" y="228" width="900" height="32" fill="url(#w)"/>
+  <path d="M0 244 Q 75 236 150 244 T 300 244 T 450 244 T 600 244 T 750 244 T 900 244" stroke="#8fc1e3" stroke-width="2" fill="none" opacity=".7"/>
+</svg></section>
 
-<div class="band">
-  <div class="band-inner">
-    <div class="ph"><span>Main street · photos soon</span></div>
-    <div class="ph"><span>Residences · as finishes land</span></div>
-    <div class="ph"><span>Sidewalk · commercial entries</span></div>
+<div class="wrap"><section class="section" aria-labelledby="life-h">
+  <p class="eyebrow">Life in Springfield</p>
+  <h2 id="life-h">Main street has been here a long time</h2>
+  <p>The Spring sits on Central Street in the heart of downtown. Fire insurance mapmakers drew this town block by block more than a century ago. New photos of the building are coming as finishes land; until then, here is downtown on paper.</p>
+  <div class="strip">
+    <figure><img src="img/sanborn-1.jpg" alt="1894 Sanborn fire insurance map of Springfield, Minnesota" loading="lazy"><figcaption>Springfield, June 1894</figcaption></figure>
+    <figure><img src="img/sanborn-2.jpg" alt="1909 Sanborn fire insurance map of Springfield, Minnesota" loading="lazy"><figcaption>Springfield, December 1909</figcaption></figure>
+    <figure><img src="img/sanborn-3.jpg" alt="1917 Sanborn fire insurance map of Springfield, Minnesota" loading="lazy"><figcaption>Springfield, March 1917</figcaption></figure>
   </div>
-</div>
-<p class="band-note">We’re waiting on finished photography. The bones are already there — new interiors inside the old brick.</p>
+  <p class="credit">Sanborn Fire Insurance Maps, Sanborn Map Company. Library of Congress, Geography and Map Division, via <a href="https://commons.wikimedia.org/wiki/Category:Sanborn_Fire_Insurance_Map_from_Springfield,_Brown_County,_Minnesota" target="_blank" rel="noopener">Wikimedia Commons</a>. Public domain.</p>
+</section></div>
 
 <div class="wrap">
   <section class="section">
@@ -132,7 +199,7 @@ footer a{color:var(--muted)}
           <p class="meta">2 bedroom · about 1,025 sf · south light</p>
         </div>
         <p class="price">$1,295<small>/mo</small></p>
-        <p class="body">The flagship feel — longer great room, island, kitchen along the east wall, windows toward the green.</p>
+        <p class="body">The flagship feel, longer great room, island, kitchen along the east wall, windows toward the green.</p>
       </article>
       <article class="unit">
         <div>
@@ -148,7 +215,7 @@ footer a{color:var(--muted)}
           <p class="meta">2 bedroom · about 1,175 sf · north corner</p>
         </div>
         <p class="price">$1,250<small>/mo</small></p>
-        <p class="body">Corner glass, a split plan, and private access toward the back stair — a little tucked away from the front of the floor.</p>
+        <p class="body">Corner glass, a split plan, and private access toward the back stair, a little tucked away from the front of the floor.</p>
       </article>
       <article class="unit">
         <div>
@@ -156,7 +223,7 @@ footer a{color:var(--muted)}
           <p class="meta">2 bedroom · about 1,400 sf · most room</p>
         </div>
         <p class="price">$1,195<small>/mo</small></p>
-        <p class="body">The largest layout — pantry, coat space, and a walk-in laundry/mechanical. Made for someone who wants room to settle in.</p>
+        <p class="body">The largest layout, pantry, coat space, and a walk-in laundry/mechanical. Made for someone who wants room to settle in.</p>
       </article>
       <article class="unit">
         <div>
@@ -164,7 +231,7 @@ footer a{color:var(--muted)}
           <p class="meta">1 bedroom · about 790 sf</p>
         </div>
         <p class="price">$995<small>/mo</small></p>
-        <p class="body">A compact one-bedroom with coat closet, pantry, and in-unit laundry — simple and under a thousand.</p>
+        <p class="body">A compact one-bedroom with coat closet, pantry, and in-unit laundry, simple and under a thousand.</p>
       </article>
     </div>
     <p class="fine">Asking rents are working numbers while finishes and the architect set wrap. Units available on substantial completion.</p>
@@ -173,15 +240,66 @@ footer a{color:var(--muted)}
   <section class="section">
     <div class="soft-panel">
       <h2>Downstairs is still becoming something</h2>
-      <p>There are already one or two street-facing entries on Central. We’re not rushing to name the shop, studio, or office that belongs there. For Springfield, that open ground floor is part of what makes the building interesting — living upstairs, and a chance for something local at the sidewalk when the timing is right.</p>
+      <p>There are already one or two street-facing entries on Central. We’re not rushing to name the shop, studio, or office that belongs there. For Springfield, that open ground floor is part of what makes the building interesting, living upstairs, and a chance for something local at the sidewalk when the timing is right.</p>
     </div>
+  </section>
+
+  <section class="section in-the-news" aria-labelledby="news-h">
+    <h2 id="news-h">In the news</h2>
+    <div class="soft-panel">
+      <p class="eyebrow">Springfield Advance-Press &middot; August 14, 2026</p>
+      <p style="font-family:var(--serif);font-size:1.2rem;margin:0"><a href="https://www.springfieldap.com/news/renovation-project-bring-five-new-apartments-community" target="_blank" rel="noopener">Renovation Project to Bring Five New Apartments to Community</a></p>
+      <div class="facts">
+        <div><b>~1 year</b>of extensive renovation</div>
+        <div><b>5</b>modern apartments upstairs</div>
+        <div><b>1 + 4</b>one-bedroom and two-bedroom units</div>
+        <div><b>Fall 2026</b>expected ready for tenants</div>
+      </div>
+      <blockquote class="newsq">&ldquo;The project has included a nearly complete rebuilding of the property, with improvements such as a new roof, insulation, windows, interior walls, electrical service and plumbing.&rdquo;</blockquote>
+      <p class="fine" style="margin-top:6px">Owner Matt Damyan, as quoted by the Springfield Advance-Press.</p>
+      <blockquote class="newsq">&ldquo;After nearly a year of extensive renovations, a local building is being transformed into five modern apartments that are expected to be ready for tenants this fall.&rdquo;</blockquote>
+      <blockquote class="newsq">&ldquo;Each apartment will include its own washer and dryer, central heating and air conditioning and a kitchen hood vented directly outside.&rdquo;</blockquote>
+      <p class="fine" style="margin-top:6px">Springfield Advance-Press. The story notes the vented hoods are meant to keep cooking odors from traveling between apartments. <a href="https://www.springfieldap.com/news/renovation-project-bring-five-new-apartments-community" target="_blank" rel="noopener">Read the article and see its photo</a>; the full story ran in the print edition.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="tl-h">
+    <h2 id="tl-h">From furniture store to front door</h2>
+    <div class="tl">
+      <div><i></i><b>The purchase</b>Owner buys the former Haydens Furniture building</div>
+      <div><i></i><b>About a year</b>Roof, windows, walls, electrical, plumbing</div>
+      <div><i></i><b>August 2026</b>Owner tours city staff through the work</div>
+      <div><i></i><b>Fall 2026</b>Expected ready for tenants</div>
+    </div>
+    <p class="fine">Source: <a href="https://www.springfieldap.com/news/renovation-project-bring-five-new-apartments-community" target="_blank" rel="noopener">Springfield Advance-Press</a>, August 14, 2026.</p>
+  </section>
+
+  <section class="section" aria-labelledby="map-h">
+    <h2 id="map-h">Find it</h2>
+    <p>14 E Central Street, downtown Springfield, Minnesota 56087.</p>
+    <iframe class="map" title="Map of East Central Street, Springfield MN" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-94.9800%2C44.2350%2C-94.9630%2C44.2430&amp;layer=mapnik&amp;marker=44.23899%2C-94.97144"></iframe>
+    <p class="credit">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>. Marker shows East Central Street. <a href="https://www.openstreetmap.org/?mlat=44.23899&amp;mlon=-94.97144#map=17/44.23899/-94.97144" target="_blank" rel="noopener">Open larger map</a></p>
+  </section>
+
+  <section class="section" aria-labelledby="new-h">
+    <h2 id="new-h">What's new inside</h2>
+    <p>Photos are on the way. Here is what is behind the walls and in every home.</p>
+    <div class="feat">
+      <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16v18H4z"/><circle cx="12" cy="13" r="4.5"/><path d="M7 6h2"/></svg><strong>Washer and dryer in every unit</strong><span>Your own laundry, inside your own home.</span></div>
+      <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg><strong>Central heat and air</strong><span>Each apartment has its own system.</span></div>
+      <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 20V10h12v10M9 10V4h6v6"/><path d="M15 6h5"/></svg><strong>Kitchen hood vented outside</strong><span>Cooking odors go out, not next door.</span></div>
+      <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 12 4l9 7M5 10v10h14V10"/></svg><strong>New roof, windows, insulation</strong><span>Part of a nearly complete rebuild.</span></div>
+      <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg><strong>New electrical service</strong><span>Updated service for the whole building.</span></div>
+      <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3v5a5 5 0 0 0 10 0V3M12 13v8"/></svg><strong>New plumbing</strong><span>Fresh lines throughout, per the owner.</span></div>
+    </div>
+    <p class="fine">Features as described by the owner to the <a href="https://www.springfieldap.com/news/renovation-project-bring-five-new-apartments-community" target="_blank" rel="noopener">Springfield Advance-Press</a>, August 14, 2026.</p>
   </section>
 
   <section class="section">
     <h2>What makes it feel finished</h2>
     <div class="amen">
       <div><strong>Systems that stay put</strong><span>Private heat, air, and hot water in every home. Five new condensers on a new roof.</span></div>
-      <div><strong>Laundry where you live</strong><span>Washer and dryer in the unit — not a shared basement hallway.</span></div>
+      <div><strong>Laundry where you live</strong><span>Washer and dryer in the unit, not a shared basement hallway.</span></div>
       <div><strong>Kitchen ready</strong><span>Quartz counters and a full appliance package, including a hood that vents outside.</span></div>
       <div><strong>Old brick, new light</strong><span>Restored main-street shell, skylight corridor, stairways at both ends of the floor.</span></div>
     </div>
@@ -192,7 +310,7 @@ footer a{color:var(--muted)}
     <p>Text or email. We’ll answer questions, talk through a showing, or just leave you with a link that’s easy to forward.</p>
     <p class="contact">
       <a href="tel:+16125643426">612-564-3426</a><br>
-      <a href="mailto:greenkeypropertiesmn@gmail.com?subject=The%20Spring%20%E2%80%94%2014%20E%20Central">greenkeypropertiesmn@gmail.com</a>
+      <a href="mailto:greenkeypropertiesmn@gmail.com?subject=The%20Spring%2C%2014%20E%20Central">greenkeypropertiesmn@gmail.com</a>
     </p>
     <div class="sharebar">
       <a class="btn btn-green" href="/">Start the pre-screen</a>
@@ -209,8 +327,8 @@ footer a{color:var(--muted)}
 <script>
 (function(){
   var url = 'https://greenkeypropertiesmn.com/the-spring/';
-  var title = 'The Spring — Downtown Springfield, MN';
-  var text = 'The Spring at 14 E Central in Springfield — five residences over main street. Thought you might want the link.';
+  var title = 'The Spring | Downtown Springfield, MN';
+  var text = 'The Spring at 14 E Central in Springfield, five residences over main street. Thought you might want the link.';
   function toast(msg){
     var t = document.getElementById('toast');
     t.textContent = msg; t.classList.add('show');
@@ -218,7 +336,7 @@ footer a{color:var(--muted)}
   }
   function copy(){
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function(){ toast('Link copied — paste it into a text or email.'); });
+      navigator.clipboard.writeText(url).then(function(){ toast('Link copied, paste it into a text or email.'); });
     } else {
       var i = document.createElement('input'); i.value = url; document.body.appendChild(i); i.select();
       try { document.execCommand('copy'); toast('Link copied.'); } catch(e) { toast(url); }
