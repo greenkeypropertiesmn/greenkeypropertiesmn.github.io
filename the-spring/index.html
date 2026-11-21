@@ -8,7 +8,16 @@
 <link rel="canonical" href="https://greenkeypropertiesmn.com/the-spring/">
 <meta name="theme-color" content="#367C2B">
 <meta property="og:title" content="The Spring | Downtown Springfield, MN">
-<meta property="og:description" content="Five residences over main street at 14 E Central. A quieter kind of downtown living.">
+<meta property="og:description" content="Five renewed residences over main street at 14 E Central in downtown Springfield, MN. Photos, floor plans, and a map of the block.">
+<meta property="og:image" content="https://greenkeypropertiesmn.com/the-spring/img/og-the-spring.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The Spring, a restored brick building at 14 E Central Street in Springfield, Minnesota">
+<meta property="og:site_name" content="Green Key Properties">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Spring | Downtown Springfield, MN">
+<meta name="twitter:description" content="Five renewed residences over main street at 14 E Central. Photos, floor plans, and a map of the block.">
+<meta name="twitter:image" content="https://greenkeypropertiesmn.com/the-spring/img/og-the-spring.jpg">
 <meta property="og:url" content="https://greenkeypropertiesmn.com/the-spring/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -134,6 +143,124 @@ footer a{color:var(--muted)}
 .tl i{border-color:var(--wheat)!important}.tl div:last-child i{background:var(--wheat)!important}
 .strip img{filter:sepia(.25) saturate(.9)}
 .newsq{border-left-color:var(--sky)!important}
+
+/* ---- photo era additions ---- */
+.sp-hero .in{padding-top:48px}
+.hero-photo{position:relative;max-width:1100px;margin:28px auto 0;padding:0 14px 26px;z-index:2}
+.hero-photo figure{margin:0;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.35);position:relative;aspect-ratio:3/2;background:#14203a}
+.hero-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:opacity .6s ease}
+.hero-photo img.dusk{opacity:0}
+.hero-photo.is-dusk img.dusk{opacity:1}
+.hero-toggle{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.hero-toggle button{appearance:none;border:1px solid rgba(255,255,255,.35);background:transparent;color:#f3ede4;border-radius:999px;padding:9px 16px;font:600 .88rem var(--sans);cursor:pointer}
+.hero-toggle button[aria-pressed="true"]{background:#f3ede4;color:var(--green-d);border-color:#f3ede4}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:16px}
+@media(min-width:640px){.gal{grid-template-columns:repeat(3,1fr);gap:10px}}
+.gal button{appearance:none;border:0;padding:0;margin:0;background:#ddd;border-radius:12px;overflow:hidden;cursor:zoom-in;aspect-ratio:3/2;display:block}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.gal button:hover img{transform:scale(1.04)}
+.gal button:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.plan-wrap{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:10px;margin-top:16px}
+.plan-wrap img{width:100%;height:auto}
+@media(min-width:760px){.plan-wrap{max-width:560px;margin-left:auto;margin-right:auto}}
+.plan-cap{font-size:.82rem;color:var(--muted);margin:8px 4px 2px}
+.plan-int{position:relative}
+.plan-int svg{position:absolute;inset:0;width:100%;height:100%}
+.plan-int polygon{fill:rgba(181,84,58,.10);stroke:rgba(181,84,58,.55);stroke-width:4;cursor:pointer;transition:fill .2s}
+.plan-int polygon:hover,.plan-int polygon:focus{fill:rgba(181,84,58,.28);outline:none}
+.plan-int text{font:700 64px var(--serif);fill:var(--wheat-d);pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:10px}
+.plan-hint{font-size:.9rem;color:var(--muted);margin:10px 2px 0}
+.ucards{display:grid;gap:14px;margin-top:18px}
+@media(min-width:640px){.ucards{grid-template-columns:1fr 1fr}}
+.ucard{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
+.ucard .cov{appearance:none;border:0;padding:0;cursor:zoom-in;position:relative;aspect-ratio:3/2;background:#ddd}
+.ucard .cov img{width:100%;height:100%;object-fit:cover}
+.ucard .cov span{position:absolute;right:10px;bottom:10px;background:rgba(20,31,56,.82);color:#fff;font-size:.8rem;font-weight:600;border-radius:999px;padding:6px 11px}
+.ucard .b{padding:16px 18px 18px;display:grid;gap:6px}
+.ucard h3{font-family:var(--serif);font-size:1.3rem;margin:0;color:var(--green-d)}
+.ucard .meta{margin:0;color:var(--muted);font-size:.92rem}
+.ucard .price{font-family:var(--serif);font-size:1.25rem;font-weight:600;margin:0}
+.ucard .price small{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-left:4px}
+.ucard .body{margin:2px 0 0;font-size:.96rem}
+.ucard .see{justify-self:start;margin-top:6px}
+.ucard.flash{box-shadow:0 0 0 3px var(--wheat)}
+.lvl{display:inline-block;font:600 .74rem var(--sans);letter-spacing:2px;text-transform:uppercase;color:var(--wheat-d);margin-bottom:6px}
+.note-est{font-size:.86rem;color:var(--muted);margin-top:10px}
+.stat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0 4px}
+.stat div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.9rem}
+.stat b{display:block;font-family:var(--serif);font-size:1.1rem;color:var(--green)}
+.spot-filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.spot-filter button{appearance:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 13px;font:600 .84rem var(--sans);color:var(--green-d);cursor:pointer}
+.spot-filter button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.spots{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:8px}
+@media(min-width:640px){.spots{grid-template-columns:1fr 1fr}}
+.spots li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem;cursor:pointer;display:flex;gap:10px;align-items:flex-start}
+.spots li b{display:block;font-family:var(--serif);color:var(--green-d);font-size:1rem}
+.spots li small{color:var(--muted)}
+.dot{flex:0 0 12px;height:12px;border-radius:50%;margin-top:5px}
+
+.smap{position:relative;width:100%;height:440px;margin-top:14px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#f4ede3;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.smap.drag{cursor:grabbing}
+@media(min-width:760px){.smap{height:540px}}
+.smap svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.smap .r-loc{fill:none;stroke:#fffdf9;stroke-width:var(--w-loc);stroke-linecap:round;stroke-linejoin:round}
+.smap .r-loc-c{fill:none;stroke:#e4d6c5;stroke-width:var(--w-locc);stroke-linecap:round;stroke-linejoin:round}
+.smap .r-hwy{fill:none;stroke:#f6e3da;stroke-width:var(--w-hwy);stroke-linecap:round;stroke-linejoin:round}
+.smap .r-hwy-c{fill:none;stroke:#d9b3a3;stroke-width:var(--w-hwyc);stroke-linecap:round;stroke-linejoin:round}
+.smap .r-main{fill:none;stroke:#e3b04b;stroke-width:var(--w-main);stroke-linecap:round;stroke-linejoin:round}
+.smap .rail{fill:none;stroke:#9a9184;stroke-width:var(--w-rail);stroke-dasharray:var(--dash)}
+.smap .river{fill:none;stroke:#8fc1e3;stroke-width:var(--w-riv);stroke-linecap:round;stroke-linejoin:round}
+.smap .park{fill:#cfe3c4;stroke:#b4d1a6;stroke-width:var(--w-rail)}
+.smap .lbl{font-family:var(--sans);font-size:var(--fs);font-weight:600;fill:#6f6658;paint-order:stroke;stroke:#f4ede3;stroke-width:var(--fsw);letter-spacing:.02em}
+.smap .lbl.main{fill:#7a4c0c}
+.smap.zin .lbl.zlo.main{display:none}.smap:not(.zin) .lbl.zhi{display:none}
+.smap .lbl.wat{fill:#3f78a6;font-style:italic}
+.smap .lbl.prk{fill:#3f6e3a}
+.mpins{position:absolute;inset:0;pointer-events:none}
+.mpin{position:absolute;pointer-events:auto;appearance:none;border:0;padding:0;background:none;width:30px;height:38px;transform:translate(-50%,-100%);cursor:pointer}
+.mpin i{position:absolute;left:3px;top:0;width:24px;height:24px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transform-origin:center}
+.mpin i{top:2px}
+.mpin.home{width:44px;height:54px;z-index:5}
+.mpin.home i{left:5px;width:34px;height:34px;background:var(--wheat)!important}
+.mpin.home b{position:absolute;left:50%;bottom:58px;transform:translateX(-50%);white-space:nowrap;background:var(--green-d);color:#fff;font:600 .78rem var(--sans);padding:4px 9px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.mpin.on i{box-shadow:0 0 0 4px rgba(227,176,75,.75),0 2px 6px rgba(0,0,0,.3)}
+.mpin.on{z-index:6}
+.mpin:focus-visible{outline:none}.mpin:focus-visible i{outline:3px solid var(--gold);outline-offset:2px}
+.mctl{position:absolute;top:10px;right:10px;display:flex;flex-direction:column;gap:6px;z-index:8}
+.mctl button,.mview button{appearance:none;border:1px solid var(--line);background:#fff;color:var(--green-d);font:700 1.15rem var(--sans);width:40px;height:40px;border-radius:12px;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.mview{position:absolute;top:10px;left:10px;display:flex;gap:6px;z-index:8}
+.mview button{width:auto;padding:0 12px;font-size:.8rem;font-weight:600;height:34px;border-radius:999px}
+.mview button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.mcard{position:absolute;left:10px;right:10px;bottom:10px;z-index:9;background:#fff;border-radius:14px;box-shadow:0 6px 22px rgba(20,31,56,.22);padding:12px 44px 12px 14px;font-size:.9rem;line-height:1.45}
+.mcard[hidden]{display:none}
+.mcard b{display:block;font-family:var(--serif);color:var(--green-d);font-size:1.05rem}
+.mcard small{color:var(--muted)}
+.mcard .x{position:absolute;top:8px;right:8px;appearance:none;border:0;background:#f1ebe3;border-radius:999px;width:30px;height:30px;font-size:1.1rem;cursor:pointer;color:var(--green-d)}
+@media(min-width:760px){.mcard{right:auto;width:340px}}
+.spots li.on{border-color:var(--gold);box-shadow:0 0 0 2px rgba(227,176,75,.5)}
+
+.tour{position:relative;border-radius:18px;overflow:hidden;background:var(--green-d);color:#f3ede4;margin-top:16px}
+.tour img{width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.55;display:block}
+.tour .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 22px 24px;background:linear-gradient(180deg,rgba(20,31,56,0) 25%,rgba(20,31,56,.92) 100%)}
+.tour .ov .k{font:600 .74rem var(--sans);letter-spacing:2.5px;text-transform:uppercase;color:var(--gold)}
+.tour .ov h3{font-family:var(--serif);font-size:clamp(1.4rem,5vw,2rem);margin:6px 0 6px;color:#fff;font-weight:600}
+.tour .ov p{margin:0;max-width:34em;color:#dfe6f1;font-size:.98rem}
+.tour-embed{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;margin-top:16px;background:#000}
+.tour-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lb{position:fixed;inset:0;background:#0b1020;z-index:1000;display:none;flex-direction:column}
+.lb.open{display:flex}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;color:#f3ede4;font-size:.9rem;gap:10px}
+.lb-top b{font-family:var(--serif);font-size:1.05rem}
+.lb-x{appearance:none;border:0;background:rgba(255,255,255,.12);color:#fff;border-radius:999px;width:42px;height:42px;font-size:1.4rem;cursor:pointer}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;position:relative;min-height:0;touch-action:pan-y}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);appearance:none;border:0;background:rgba(255,255,255,.14);color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.5rem;cursor:pointer}
+.lb-prev{left:10px}.lb-next{right:10px}
+.lb-cap{color:#cfd6e4;text-align:center;font-size:.88rem;padding:10px 14px 4px}
+.lb-strip{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 14px}
+.lb-strip button{flex:0 0 auto;appearance:none;border:2px solid transparent;padding:0;border-radius:8px;overflow:hidden;width:76px;height:52px;background:#222;cursor:pointer;opacity:.6}
+.lb-strip button.on{border-color:var(--gold);opacity:1}
+.lb-strip img{width:100%;height:100%;object-fit:cover}
 </style>
 </head>
 <body>
@@ -154,32 +281,37 @@ footer a{color:var(--muted)}
   <p class="kick">Downtown Springfield, Minnesota</p>
   <h1 class="sp-mark">The <em>Spring</em></h1>
   <p class="addr">14 E Central Street</p>
-  <p class="lede">A restored main-street building with five renewed residences upstairs, the kind of place you can text a neighbor about after coffee, without needing a sales pitch.</p>
+  <p class="lede">A restored main-street building with five renewed residences upstairs, the kind of building you can text a neighbor about after coffee, without needing a sales pitch.</p>
   <div class="sharebar">
     <button type="button" class="btn btn-green" id="shareBtn">Share with someone</button>
     <button type="button" class="btn btn-soft" id="copyBtn">Copy link</button>
+    <button type="button" class="btn btn-soft" id="blurbBtn">Copy a note to forward</button>
     <a class="btn btn-soft" href="mailto:?subject=The%20Spring%20in%20downtown%20Springfield&body=Thought%20of%20you%2C%20The%20Spring%20at%2014%20E%20Central%20in%20Springfield.%0A%0Ahttps%3A%2F%2Fgreenkeypropertiesmn.com%2Fthe-spring%2F">Email this page</a>
   </div>
   <div class="toast" id="toast" role="status"></div>
-</div><svg class="scene" viewBox="0 0 900 260" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Illustration (not the actual building): a brick main-street storefront at spring dusk">
-  <defs><linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc1e3" stop-opacity=".55"/><stop offset="1" stop-color="#8fc1e3" stop-opacity=".05"/></linearGradient></defs>
-  <circle cx="760" cy="60" r="34" fill="#e3b04b" opacity=".85"/>
-  <g fill="#f2c4c0" opacity=".8"><circle cx="90" cy="70" r="5"/><circle cx="130" cy="40" r="4"/><circle cx="610" cy="50" r="4"/><circle cx="840" cy="120" r="5"/><circle cx="50" cy="130" r="3"/></g>
-  <rect x="300" y="60" width="300" height="170" fill="#b5543a"/>
-  <rect x="300" y="52" width="300" height="12" fill="#8f3f2a"/>
-  <g fill="#f6d9a6"><rect x="325" y="80" width="40" height="52" rx="2"/><rect x="385" y="80" width="40" height="52" rx="2"/><rect x="475" y="80" width="40" height="52" rx="2"/><rect x="535" y="80" width="40" height="52" rx="2"/></g>
-  <rect x="300" y="146" width="300" height="6" fill="#8f3f2a"/>
-  <g fill="#1b2236" opacity=".55"><rect x="320" y="162" width="110" height="68"/><rect x="470" y="162" width="110" height="68"/></g>
-  <rect x="436" y="168" width="28" height="62" fill="#e3b04b" opacity=".9"/>
-  <rect x="120" y="120" width="160" height="110" fill="#2a3b60"/><rect x="620" y="105" width="170" height="125" fill="#2a3b60"/>
-  <rect x="0" y="228" width="900" height="32" fill="url(#w)"/>
-  <path d="M0 244 Q 75 236 150 244 T 300 244 T 450 244 T 600 244 T 750 244 T 900 244" stroke="#8fc1e3" stroke-width="2" fill="none" opacity=".7"/>
-</svg></section>
+</div>
+<div class="hero-photo" id="heroPhoto">
+  <figure>
+    <picture><source type="image/webp" srcset="img/hero-day-800.webp 800w, img/hero-day.webp 1400w" sizes="(min-width:1100px) 1070px, 100vw"><img class="day" src="img/hero-day.jpg" width="1400" height="933" alt="The Spring at 14 E Central Street, a brick two-story building on main street under a blue sky" fetchpriority="high"></picture>
+    <picture><source type="image/webp" srcset="img/hero-twilight-800.webp 800w, img/hero-twilight.webp 1400w" sizes="(min-width:1100px) 1070px, 100vw"><img class="dusk" src="img/hero-twilight.jpg" width="1400" height="933" alt="The Spring at twilight with warm light in the windows and storefront" loading="lazy"></picture>
+  </figure>
+  <div class="hero-toggle" role="group" aria-label="Hero photo">
+    <button type="button" data-mode="day" aria-pressed="true">Daytime</button>
+    <button type="button" data-mode="dusk" aria-pressed="false">Twilight</button>
+  </div>
+</div></section>
 
-<div class="wrap"><section class="section" aria-labelledby="life-h">
+<div class="wrap"><section class="section" id="building">
+    <span class="lvl">The building</span>
+    <h2>Brick, glass, and main street</h2>
+    <p>The Spring holds the corner of daily life downtown: storefront glass at the sidewalk, a private foyer and stair for the residences, and five homes above.</p>
+    <div class="gal" aria-label="Building exterior photos"><button type="button" data-set="ext" data-i="0" aria-label="Open photo: The Spring, 14 E Central Street, brick front on main street"><img src="img/t/01.webp" alt="The Spring, 14 E Central Street, brick front on main street" loading="lazy" width="640" height="427"></button><button type="button" data-set="ext" data-i="1" aria-label="Open photo: The Spring front and storefront glass"><img src="img/t/05.webp" alt="The Spring front and storefront glass" loading="lazy" width="640" height="427"></button><button type="button" data-set="ext" data-i="2" aria-label="Open photo: The Spring from across Central Street"><img src="img/t/03.webp" alt="The Spring from across Central Street" loading="lazy" width="640" height="427"></button><button type="button" data-set="ext" data-i="3" aria-label="Open photo: The Spring and its block"><img src="img/t/06.webp" alt="The Spring and its block" loading="lazy" width="640" height="427"></button><button type="button" data-set="ext" data-i="4" aria-label="Open photo: Storefront windows along the sidewalk at dusk"><img src="img/t/08.webp" alt="Storefront windows along the sidewalk at dusk" loading="lazy" width="640" height="427"></button><button type="button" data-set="ext" data-i="5" aria-label="Open photo: Storefront entry doors at dusk"><img src="img/t/09.webp" alt="Storefront entry doors at dusk" loading="lazy" width="640" height="427"></button><button type="button" data-set="ext" data-i="6" aria-label="Open photo: Street-level foyer leading to the residences"><img src="img/t/07.webp" alt="Street-level foyer leading to the residences" loading="lazy" width="640" height="427"></button></div>
+  </section>
+
+<section class="section" aria-labelledby="life-h">
   <p class="eyebrow">Life in Springfield</p>
   <h2 id="life-h">Main street has been here a long time</h2>
-  <p>The Spring sits on Central Street in the heart of downtown. Fire insurance mapmakers drew this town block by block more than a century ago. New photos of the building are coming as finishes land; until then, here is downtown on paper.</p>
+  <p>The Spring sits on Central Street in the heart of downtown. Fire insurance mapmakers drew this town block by block more than a century ago. Here is downtown on paper.</p>
   <div class="strip">
     <figure><img src="img/sanborn-1.jpg" alt="1894 Sanborn fire insurance map of Springfield, Minnesota" loading="lazy"><figcaption>Springfield, June 1894</figcaption></figure>
     <figure><img src="img/sanborn-2.jpg" alt="1909 Sanborn fire insurance map of Springfield, Minnesota" loading="lazy"><figcaption>Springfield, December 1909</figcaption></figure>
@@ -189,59 +321,63 @@ footer a{color:var(--muted)}
 </section></div>
 
 <div class="wrap">
-  <section class="section">
+  <section class="section" id="homes">
+    <span class="lvl">Second floor</span>
     <h2>Five homes over the street</h2>
-    <p class="intro">Each residence has its own furnace, air, water heater, and laundry. Quartz in the kitchen. Appliances included. Gas and electric are separately metered; water is shared and handled fairly in the lease.</p>
-    <div class="units">
-      <article class="unit">
-        <div>
-          <h3>Unit 2</h3>
-          <p class="meta">2 bedroom · about 1,025 sf · south light</p>
-        </div>
-        <p class="price">$1,295<small>/mo</small></p>
-        <p class="body">The flagship feel, longer great room, island, kitchen along the east wall, windows toward the green.</p>
-      </article>
-      <article class="unit">
-        <div>
-          <h3>Unit 1</h3>
-          <p class="meta">2 bedroom · about 1,075 sf · south light</p>
-        </div>
-        <p class="price">$1,250<small>/mo</small></p>
-        <p class="body">Coat closet at the door, bright main room, full bath between the bedrooms. Quiet and straightforward.</p>
-      </article>
-      <article class="unit">
-        <div>
-          <h3>Unit 5</h3>
-          <p class="meta">2 bedroom · about 1,175 sf · north corner</p>
-        </div>
-        <p class="price">$1,250<small>/mo</small></p>
-        <p class="body">Corner glass, a split plan, and private access toward the back stair, a little tucked away from the front of the floor.</p>
-      </article>
-      <article class="unit">
-        <div>
-          <h3>Unit 3</h3>
-          <p class="meta">2 bedroom · about 1,400 sf · most room</p>
-        </div>
-        <p class="price">$1,195<small>/mo</small></p>
-        <p class="body">The largest layout, pantry, coat space, and a walk-in laundry/mechanical. Made for someone who wants room to settle in.</p>
-      </article>
-      <article class="unit">
-        <div>
-          <h3>Unit 4</h3>
-          <p class="meta">1 bedroom · about 790 sf</p>
-        </div>
-        <p class="price">$995<small>/mo</small></p>
-        <p class="body">A compact one-bedroom with coat closet, pantry, and in-unit laundry, simple and under a thousand.</p>
-      </article>
+    <p class="intro">Each residence has its own furnace, air, water heater, and laundry. Granite in the kitchen. Appliances included. Gas and electric are separately metered; water is shared and handled fairly in the lease.</p>
+    <div class="plan-wrap">
+      <div class="plan-int">
+        <img src="img/plan-second-floor-residences.webp" width="1600" height="2388" alt="Second floor plan showing five residences, Units 1 through 5 (approximate, not to scale)" loading="lazy">
+        <svg viewBox="0 0 1600 2388" role="group" aria-label="Tap a unit to see its photos"><a href="#unit-5" data-unit="5" aria-label="Unit 5, see photos"><polygon points="315.5,168.1 1255.7,168.1 1255.7,472.9 940.5,472.9 940.5,562.2 796.1,562.2 796.1,641.0 315.5,641.0" tabindex="0"></polygon><text x="827" y="483" text-anchor="middle">5</text></a><a href="#unit-4" data-unit="4" aria-label="Unit 4, see photos"><polygon points="315.5,641.0 796.1,641.0 796.1,662.0 1163.7,662.0 1163.7,969.5 315.5,969.5" tabindex="0"></polygon><text x="758" y="780" text-anchor="middle">4</text></a><a href="#unit-3" data-unit="3" aria-label="Unit 3, see photos"><polygon points="315.5,969.5 1190.0,969.5 1190.0,1355.7 704.1,1355.7 704.1,1495.0 315.5,1495.0" tabindex="0"></polygon><text x="737" y="1295" text-anchor="middle">3</text></a><a href="#unit-2" data-unit="2" aria-label="Unit 2, see photos"><polygon points="315.5,1495.0 704.1,1495.0 704.1,1455.6 817.1,1455.6 817.1,2364.7 315.5,2364.7" tabindex="0"></polygon><text x="612" y="1794" text-anchor="middle">2</text></a><a href="#unit-1" data-unit="1" aria-label="Unit 1, see photos"><polygon points="817.1,1455.6 1142.7,1455.6 1142.7,1939.0 1281.9,1939.0 1281.9,2364.7 817.1,2364.7" tabindex="0"></polygon><text x="1081" y="1942" text-anchor="middle">1</text></a></svg>
+      </div>
+      <p class="plan-hint">Tap a unit on the plan, or a card below, to see its photos. Street side (south) is at the bottom.</p>
+      <p class="plan-cap">Second floor. Floor plan is approximate and not to scale.</p>
     </div>
+    <div class="ucards"><article class="ucard" id="unit-1">
+      <button type="button" class="cov" data-set="u1" data-i="0" aria-label="Open Unit 1 photos"><img src="img/t/29.webp" alt="Unit 1: Living room with four south windows" loading="lazy" width="640" height="427"><span>9 photos</span></button>
+      <div class="b"><h3>Unit 1</h3><p class="meta">2 bedroom · about 1,075 sf · south light</p><p class="price">$1,250<small>/mo</small></p><p class="body">Coat closet at the door, bright main room, full bath between the bedrooms. Quiet and straightforward.</p>
+      <button type="button" class="btn btn-soft see" data-set="u1" data-i="0">See Unit 1 photos</button></div>
+    </article><article class="ucard" id="unit-2">
+      <button type="button" class="cov" data-set="u2" data-i="0" aria-label="Open Unit 2 photos"><img src="img/t/13.webp" alt="Unit 2: Open kitchen and living room with tall windows" loading="lazy" width="640" height="427"><span>12 photos</span></button>
+      <div class="b"><h3>Unit 2</h3><p class="meta">2 bedroom · about 1,025 sf · south light</p><p class="price">$1,295<small>/mo</small></p><p class="body">The flagship feel, longer great room, kitchen along the east wall, windows toward the green.</p>
+      <button type="button" class="btn btn-soft see" data-set="u2" data-i="0">See Unit 2 photos</button></div>
+    </article><article class="ucard" id="unit-3">
+      <button type="button" class="cov" data-set="u3" data-i="0" aria-label="Open Unit 3 photos"><img src="img/t/37.webp" alt="Unit 3: Living room opening to the kitchen" loading="lazy" width="640" height="427"><span>9 photos</span></button>
+      <div class="b"><h3>Unit 3</h3><p class="meta">2 bedroom · about 1,400 sf · most room</p><p class="price">$1,195<small>/mo</small></p><p class="body">The largest layout, pantry, coat space, and a walk-in laundry/mechanical. Made for someone who wants room to settle in.</p>
+      <button type="button" class="btn btn-soft see" data-set="u3" data-i="0">See Unit 3 photos</button></div>
+    </article><article class="ucard" id="unit-4">
+      <button type="button" class="cov" data-set="u4" data-i="0" aria-label="Open Unit 4 photos"><img src="img/t/42.webp" alt="Unit 4: L-shaped kitchen with granite counters" loading="lazy" width="640" height="427"><span>8 photos</span></button>
+      <div class="b"><h3>Unit 4</h3><p class="meta">1 bedroom · about 790 sf</p><p class="price">$995<small>/mo</small></p><p class="body">A compact one-bedroom with coat closet, pantry, and in-unit laundry, simple and under a thousand.</p>
+      <button type="button" class="btn btn-soft see" data-set="u4" data-i="0">See Unit 4 photos</button></div>
+    </article><article class="ucard" id="unit-5">
+      <button type="button" class="cov" data-set="u5" data-i="0" aria-label="Open Unit 5 photos"><img src="img/t/51.webp" alt="Unit 5: Corner living room with kitchen and windows" loading="lazy" width="640" height="427"><span>11 photos</span></button>
+      <div class="b"><h3>Unit 5</h3><p class="meta">2 bedroom · about 1,175 sf · north corner</p><p class="price">$1,250<small>/mo</small></p><p class="body">Corner glass, a split plan, and private access toward the back stair, a little tucked away from the front of the floor.</p>
+      <button type="button" class="btn btn-soft see" data-set="u5" data-i="0">See Unit 5 photos</button></div>
+    </article></div>
     <p class="fine">Asking rents are working numbers while finishes and the architect set wrap. Units available on substantial completion.</p>
   </section>
 
-  <section class="section">
-    <div class="soft-panel">
-      <h2>Downstairs is still becoming something</h2>
-      <p>There are already one or two street-facing entries on Central. We’re not rushing to name the shop, studio, or office that belongs there. For Springfield, that open ground floor is part of what makes the building interesting, living upstairs, and a chance for something local at the sidewalk when the timing is right.</p>
+  <section class="section" id="street-level">
+    <span class="lvl">Street level</span>
+    <h2>Unfinished commercial space with future rental upside</h2>
+    <p>Shown as it stands today. There are already one or two street-facing entries on Central. We’re not rushing to name the shop, studio, or office that belongs there. For Springfield, that open ground floor is part of what makes the building interesting: living upstairs, and a chance for something local at the sidewalk when the timing is right.</p>
+    <div class="stat">
+      <div><b>One open room</b>across nearly the full footprint</div>
+      <div><b>Storefront glass</b>facing Central Street</div>
+      <div><b>About 11–12 ft</b>ceiling height, approximate</div>
     </div>
+    <div class="gal" aria-label="Street-level commercial space photos"><button type="button" data-set="com" data-i="0" aria-label="Open photo: Wide view of the unfinished commercial space"><img src="img/t/63.webp" alt="Wide view of the unfinished commercial space" loading="lazy" width="640" height="427"></button><button type="button" data-set="com" data-i="1" aria-label="Open photo: Commercial space facing the street-front glass"><img src="img/t/62.webp" alt="Commercial space facing the street-front glass" loading="lazy" width="640" height="427"></button><button type="button" data-set="com" data-i="2" aria-label="Open photo: Commercial space toward the storefront"><img src="img/t/64.webp" alt="Commercial space toward the storefront" loading="lazy" width="640" height="427"></button><button type="button" data-set="com" data-i="3" aria-label="Open photo: Open commercial floor with new drywall partitions"><img src="img/t/61.webp" alt="Open commercial floor with new drywall partitions" loading="lazy" width="640" height="427"></button><button type="button" data-set="com" data-i="4" aria-label="Open photo: Unfinished commercial space with pressed-tin ceiling"><img src="img/t/60.webp" alt="Unfinished commercial space with pressed-tin ceiling" loading="lazy" width="640" height="427"></button><button type="button" data-set="com" data-i="5" aria-label="Open photo: Rear of the commercial space with tall windows"><img src="img/t/66.webp" alt="Rear of the commercial space with tall windows" loading="lazy" width="640" height="427"></button><button type="button" data-set="com" data-i="6" aria-label="Open photo: Side passage with original brick wall"><img src="img/t/65.webp" alt="Side passage with original brick wall" loading="lazy" width="640" height="427"></button></div>
+    <div class="plan-wrap"><img src="img/plan-street-level-commercial.webp" width="1600" height="2388" alt="Street level floor plan: one open room with front foyer and stairs (approximate, not to scale)" loading="lazy"><p class="plan-cap">Street level. Unfinished commercial space with future rental upside. Floor plan is approximate and not to scale.</p></div>
+    <p class="note-est">Ceiling height is an approximate estimate from photos, not a measurement. Pipes and conduit run lower in spots.</p>
+  </section>
+
+  <section class="section" id="basement">
+    <span class="lvl">Lower level</span>
+    <h2>The basement</h2>
+    <p>A long open lower level under the building, with exposed joists, original stone foundation walls, and new framing in progress. Unfinished today.</p>
+    <div class="gal" aria-label="Basement photos"><button type="button" data-set="base" data-i="0" aria-label="Open photo: Open basement with exposed joists"><img src="img/t/69.webp" alt="Open basement with exposed joists" loading="lazy" width="640" height="427"></button><button type="button" data-set="base" data-i="1" aria-label="Open photo: Long basement run with exposed joists"><img src="img/t/68.webp" alt="Long basement run with exposed joists" loading="lazy" width="640" height="427"></button><button type="button" data-set="base" data-i="2" aria-label="Open photo: Basement with stone foundation and new framing"><img src="img/t/67.webp" alt="Basement with stone foundation and new framing" loading="lazy" width="640" height="427"></button></div>
+    <div class="plan-wrap"><img src="img/plan-basement.webp" width="1600" height="2388" alt="Basement floor plan (approximate, not to scale)" loading="lazy"><p class="plan-cap">Basement. Floor plan is approximate and not to scale.</p></div>
+    <p class="note-est">About 7–7.5 ft to the joists, lower under pipes and beams. Approximate estimate from photos, not a measurement.</p>
   </section>
 
   <section class="section in-the-news" aria-labelledby="news-h">
@@ -274,16 +410,40 @@ footer a{color:var(--muted)}
     <p class="fine">Source: <a href="https://www.springfieldap.com/news/renovation-project-bring-five-new-apartments-community" target="_blank" rel="noopener">Springfield Advance-Press</a>, August 14, 2026.</p>
   </section>
 
-  <section class="section" aria-labelledby="map-h">
-    <h2 id="map-h">Find it</h2>
-    <p>14 E Central Street, downtown Springfield, Minnesota 56087.</p>
-    <iframe class="map" title="Map of East Central Street, Springfield MN" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=-94.9800%2C44.2350%2C-94.9630%2C44.2430&amp;layer=mapnik&amp;marker=44.23899%2C-94.97144"></iframe>
-    <p class="credit">Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap contributors</a>. Marker shows East Central Street. <a href="https://www.openstreetmap.org/?mlat=44.23899&amp;mlon=-94.97144#map=17/44.23899/-94.97144" target="_blank" rel="noopener">Open larger map</a></p>
+  <section class="section" aria-labelledby="map-h" id="around">
+    <h2 id="map-h">Around the block</h2>
+    <p>14 E Central Street, downtown Springfield, Minnesota 56087. Coffee is steps away, groceries are a short walk, and Riverside Park sits a few blocks south along the Big Cottonwood River. Tap a pin or a name.</p>
+    <div class="spot-filter" role="group" aria-label="Filter map">
+      <button type="button" data-cat="all" aria-pressed="true">Everything</button>
+      <button type="button" data-cat="food" aria-pressed="false">Eat &amp; drink</button>
+      <button type="button" data-cat="park" aria-pressed="false">Parks &amp; outdoors</button>
+      <button type="button" data-cat="city" aria-pressed="false">Town &amp; services</button>
+      <button type="button" data-cat="school" aria-pressed="false">School</button>
+      <button type="button" data-cat="shop" aria-pressed="false">Groceries</button>
+    </div>
+    <div class="smap" id="smap" role="region" aria-roledescription="map" aria-label="Illustrated map of downtown Springfield, Minnesota, with The Spring at 14 East Central Street and nearby spots. Drawn for this page; street and river lines simplified from U.S. Census Bureau TIGER/Line public-domain data. Use the list below the map for the same spots.">
+      <svg id="smapSvg" viewBox="-780 -1020 1420 2180" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <rect x="-2780" y="-3020" width="5420" height="6180" fill="#f4ede3"/>
+        <ellipse class="park" cx="344" cy="260" rx="120" ry="78" transform="rotate(-18 344 260)"/><ellipse class="park" cx="-5" cy="1007" rx="150" ry="95" transform="rotate(-10 -5 1007)"/>
+        <path class="river" d="M468 -1020 410 -985 313 -954 273 -929 257 -925 197 -935 124 -973 69 -943 33 -943 3 -956 -7 -967 -19 -1020M210 1160 212 1141 204 1117 186 1098 88 1055 77 1035 70 994 48 980 9 972 1 960 7 942 41 900 134 824 143 814 154 787 173 767 338 682 387 682 394 673 392 643 358 599 310 553 188 472 171 441 162 393 143 354 107 337 67 331 -3 301 -20 270 -22 249 -17 229 29 166 56 146 103 134 320 98 383 75 457 64 640 68"/>
+        <path class="r-loc-c" d="M426 -3 427 43M-780 1108 -767 1094M-767 1094 -711 1032M-711 1032 -656 963M-656 963 -622 917M-622 917 -543 813M-543 813 -538 806M-538 806 -533 799M-533 799 -517 778M-517 778 -511 771M-511 771 -443 683M-443 683 -240 418M-240 418 -172 330M-305 -729 -300 -336M-300 -336 -298 -224M-298 -224 -295 -112M-295 -112 -293 3M-46 -338 -189 -338M-189 -338 -300 -336M-300 -336 -414 -336M-414 -336 -543 -334M-543 -334 -675 -333M640 404 369 408M369 408 342 410M342 410 330 408M330 408 278 409 269 406 260 396M604 -346 541 -345M541 -345 424 -344M424 -344 309 -342M309 -342 190 -340M190 -340 71 -339M71 -339 -46 -338M-409 5 -412 -112M-412 -112 -413 -223M-413 -223 -414 -336M-414 -336 -416 -741M310 -2 309 -90 312 -116M302 -116 307 -149 308 -229M308 -229 309 -342M309 -342 306 -507M306 -507 306 -620M306 -620 305 -752M305 -752 303 -813M310 -2 312 87M-532 5 -536 -108M-536 -108 -538 -222M-538 -222 -543 -334M-543 -334 -542 -714M187 -802 193 -1020M-43 -113 74 -115M74 -115 191 -116M191 -116 302 -116M302 -116 312 -116M312 -116 426 -117M426 -117 543 -119M543 -119 640 -120M-48 -750 -138 -749M640 -756 539 -754M539 -754 422 -754M422 -754 305 -752M305 -752 186 -751M186 -751 67 -751M67 -751 -48 -750M-40 119 -42 1M424 -231 308 -229M308 -229 190 -228M190 -228 72 -228M72 -228 -45 -228M-45 -228 -176 -224M-176 -224 -298 -224M-298 -224 -413 -223M-413 -223 -538 -222M-538 -222 -674 -219M-674 -219 -780 -222M224 1 227 92M-139 -807 -144 -1020M-416 -741 -469 -738M-291 343 -406 345M-406 345 -519 346M-519 346 -631 347M-631 347 -746 348M-746 348 -780 348M-511 771 -514 735 -516 570M-516 570 -518 459M-518 459 -519 346M-519 346 -519 232M-519 232 -520 119M-520 119 -522 5M67 -751 65 -803M541 -410 640 -411M-173 117 -293 118M-293 118 -409 119M-409 119 -520 119M640 -609 540 -607M-516 570 -628 571M-628 571 -744 573M-635 121 -746 122M-746 122 -780 122M76 -3 74 -115M74 -115 72 -228M72 -228 71 -339M71 -339 71 -506M71 -506 71 -619M71 -619 71 -724 67 -751M-42 1 -43 -113M-43 -113 -45 -228M-45 -228 -46 -338M-46 -338 -47 -618M-47 -618 -48 -750M542 -4 543 -119M543 -119 541 -345M541 -345 541 -410M541 -410 540 -510M540 -510 540 -607M540 -607 539 -754M539 -754 537 -807M423 -622 306 -620M306 -620 188 -619M188 -619 71 -619M71 -619 -47 -618M-173 228 -136 226 -82 162 -45 130 -40 119M-139 -803 -139 -807M-189 -338 -189 -371M-189 -371 -190 -471M-190 -471 -190 -504M-190 -504 -190 -518M-190 -518 -190 -559M-190 -559 -190 -573M-173 2 -173 -21M-173 -21 -174 -89M-174 -89 -175 -112M-175 -112 -175 -134M-175 -134 -175 -201M-175 -201 -176 -224M542 -4 540 42M640 -349 609 -338 598 -342M-672 5 -675 -107M-675 -107 -674 -219M-674 -219 -675 -333M-675 -333 -677 -411M-140 1160 -136 833M-136 833 -137 817M-137 817 -144 801M-144 801 -149 774M-149 774 -148 734M-148 734 -146 602M-146 602 -147 517M-147 517 -150 499M-150 499 -163 456M-163 456 -168 437M-168 437 -168 432M-168 432 -169 345M-169 345 -172 330M-172 330 -172 319M-172 319 -170 298M-170 298 -170 292M-170 292 -170 286M-170 286 -171 274M-171 274 -171 265M-171 265 -172 237M-172 237 -173 228M-173 228 -173 206M-173 206 -173 139M-173 139 -173 117M-173 117 -173 94M-173 94 -173 25M-173 25 -173 2M-47 -618 -138 -617M-173 2 -42 1M-42 1 76 -3M-324 452 -288 406 -291 343M-291 343 -290 231M-290 231 -293 118M-293 118 -293 3M435 499 356 500 345 495 342 410M640 612 485 611 461 604M426 -117 426 -3M-43 -113 -175 -112M-175 -112 -295 -112M-295 -112 -412 -112M-412 -112 -536 -108M-536 -108 -675 -107M-675 -107 -780 -109M-173 228 -290 231M-290 231 -409 232M-409 232 -519 232M-519 232 -634 235M-634 235 -746 234M-746 234 -780 234M-138 -749 -139 -803M330 408 331 323 324 270M190 -78 191 -116M191 -116 190 -228M190 -228 190 -340M190 -340 188 -506M188 -506 188 -619M188 -619 186 -751M186 -751 187 -802M-324 452 -338 458 -405 459M-405 459 -518 459M-518 459 -631 458M-631 458 -743 459M-743 459 -780 459M424 -231 424 -344M424 -344 423 -507M423 -507 423 -622M423 -622 422 -754M422 -754 420 -815M-405 459 -406 345M-406 345 -409 232M-409 232 -409 119M-409 119 -409 5M-744 573 -743 459M-743 459 -746 348M-746 348 -746 234M-746 234 -746 122M-746 122 -746 6M-542 -714 -487 -716M-48 -803 -48 -750M206 277 294 263 324 270M-780 726 -709 724M-637 6 -635 121M-635 121 -634 235M-634 235 -631 347M-631 347 -631 458M-631 458 -628 571M260 396 206 277M206 277 115 187 98 166 78 81 76 -3M369 408 375 292 324 270M71 -506 188 -506M188 -506 306 -507M306 -507 423 -507M423 -507 540 -510M540 -510 640 -512"/><path class="r-hwy-c" d="M-47 -504 -23 -504M-23 -504 48 -505M48 -505 71 -506M71 -506 95 -506M95 -506 165 -506M165 -506 188 -506M188 -506 212 -506M212 -506 282 -506M282 -506 306 -507M306 -507 329 -507M329 -507 399 -507M399 -507 423 -507M423 -507 446 -507M446 -507 516 -509M516 -509 540 -510M540 -510 550 -510M550 -510 582 -511M582 -511 592 -511M592 -511 607 -512M607 -512 640 -512M-47 -504 -75 -504M-75 -504 -162 -504M-162 -504 -190 -504M-190 -504 -213 -504M-213 -504 -280 -503M-280 -503 -303 -503M-303 -503 -325 -503M-325 -503 -393 -503M-393 -503 -416 -503M-416 -503 -441 -501M-441 -501 -457 -501M-457 -501 -504 -494M-504 -494 -518 -489M-518 -489 -543 -482M-543 -482 -571 -471M-571 -471 -588 -465M-588 -465 -636 -440M-636 -440 -652 -428M-652 -428 -677 -411M-677 -411 -780 -336"/>
+        <path class="r-loc" d="M426 -3 427 43M-780 1108 -767 1094M-767 1094 -711 1032M-711 1032 -656 963M-656 963 -622 917M-622 917 -543 813M-543 813 -538 806M-538 806 -533 799M-533 799 -517 778M-517 778 -511 771M-511 771 -443 683M-443 683 -240 418M-240 418 -172 330M-305 -729 -300 -336M-300 -336 -298 -224M-298 -224 -295 -112M-295 -112 -293 3M-46 -338 -189 -338M-189 -338 -300 -336M-300 -336 -414 -336M-414 -336 -543 -334M-543 -334 -675 -333M640 404 369 408M369 408 342 410M342 410 330 408M330 408 278 409 269 406 260 396M604 -346 541 -345M541 -345 424 -344M424 -344 309 -342M309 -342 190 -340M190 -340 71 -339M71 -339 -46 -338M-409 5 -412 -112M-412 -112 -413 -223M-413 -223 -414 -336M-414 -336 -416 -741M310 -2 309 -90 312 -116M302 -116 307 -149 308 -229M308 -229 309 -342M309 -342 306 -507M306 -507 306 -620M306 -620 305 -752M305 -752 303 -813M310 -2 312 87M-532 5 -536 -108M-536 -108 -538 -222M-538 -222 -543 -334M-543 -334 -542 -714M187 -802 193 -1020M-43 -113 74 -115M74 -115 191 -116M191 -116 302 -116M302 -116 312 -116M312 -116 426 -117M426 -117 543 -119M543 -119 640 -120M-48 -750 -138 -749M640 -756 539 -754M539 -754 422 -754M422 -754 305 -752M305 -752 186 -751M186 -751 67 -751M67 -751 -48 -750M-40 119 -42 1M424 -231 308 -229M308 -229 190 -228M190 -228 72 -228M72 -228 -45 -228M-45 -228 -176 -224M-176 -224 -298 -224M-298 -224 -413 -223M-413 -223 -538 -222M-538 -222 -674 -219M-674 -219 -780 -222M224 1 227 92M-139 -807 -144 -1020M-416 -741 -469 -738M-291 343 -406 345M-406 345 -519 346M-519 346 -631 347M-631 347 -746 348M-746 348 -780 348M-511 771 -514 735 -516 570M-516 570 -518 459M-518 459 -519 346M-519 346 -519 232M-519 232 -520 119M-520 119 -522 5M67 -751 65 -803M541 -410 640 -411M-173 117 -293 118M-293 118 -409 119M-409 119 -520 119M640 -609 540 -607M-516 570 -628 571M-628 571 -744 573M-635 121 -746 122M-746 122 -780 122M76 -3 74 -115M74 -115 72 -228M72 -228 71 -339M71 -339 71 -506M71 -506 71 -619M71 -619 71 -724 67 -751M-42 1 -43 -113M-43 -113 -45 -228M-45 -228 -46 -338M-46 -338 -47 -618M-47 -618 -48 -750M542 -4 543 -119M543 -119 541 -345M541 -345 541 -410M541 -410 540 -510M540 -510 540 -607M540 -607 539 -754M539 -754 537 -807M423 -622 306 -620M306 -620 188 -619M188 -619 71 -619M71 -619 -47 -618M-173 228 -136 226 -82 162 -45 130 -40 119M-139 -803 -139 -807M-189 -338 -189 -371M-189 -371 -190 -471M-190 -471 -190 -504M-190 -504 -190 -518M-190 -518 -190 -559M-190 -559 -190 -573M-173 2 -173 -21M-173 -21 -174 -89M-174 -89 -175 -112M-175 -112 -175 -134M-175 -134 -175 -201M-175 -201 -176 -224M542 -4 540 42M640 -349 609 -338 598 -342M-672 5 -675 -107M-675 -107 -674 -219M-674 -219 -675 -333M-675 -333 -677 -411M-140 1160 -136 833M-136 833 -137 817M-137 817 -144 801M-144 801 -149 774M-149 774 -148 734M-148 734 -146 602M-146 602 -147 517M-147 517 -150 499M-150 499 -163 456M-163 456 -168 437M-168 437 -168 432M-168 432 -169 345M-169 345 -172 330M-172 330 -172 319M-172 319 -170 298M-170 298 -170 292M-170 292 -170 286M-170 286 -171 274M-171 274 -171 265M-171 265 -172 237M-172 237 -173 228M-173 228 -173 206M-173 206 -173 139M-173 139 -173 117M-173 117 -173 94M-173 94 -173 25M-173 25 -173 2M-47 -618 -138 -617M-173 2 -42 1M-42 1 76 -3M-324 452 -288 406 -291 343M-291 343 -290 231M-290 231 -293 118M-293 118 -293 3M435 499 356 500 345 495 342 410M640 612 485 611 461 604M426 -117 426 -3M-43 -113 -175 -112M-175 -112 -295 -112M-295 -112 -412 -112M-412 -112 -536 -108M-536 -108 -675 -107M-675 -107 -780 -109M-173 228 -290 231M-290 231 -409 232M-409 232 -519 232M-519 232 -634 235M-634 235 -746 234M-746 234 -780 234M-138 -749 -139 -803M330 408 331 323 324 270M190 -78 191 -116M191 -116 190 -228M190 -228 190 -340M190 -340 188 -506M188 -506 188 -619M188 -619 186 -751M186 -751 187 -802M-324 452 -338 458 -405 459M-405 459 -518 459M-518 459 -631 458M-631 458 -743 459M-743 459 -780 459M424 -231 424 -344M424 -344 423 -507M423 -507 423 -622M423 -622 422 -754M422 -754 420 -815M-405 459 -406 345M-406 345 -409 232M-409 232 -409 119M-409 119 -409 5M-744 573 -743 459M-743 459 -746 348M-746 348 -746 234M-746 234 -746 122M-746 122 -746 6M-542 -714 -487 -716M-48 -803 -48 -750M206 277 294 263 324 270M-780 726 -709 724M-637 6 -635 121M-635 121 -634 235M-634 235 -631 347M-631 347 -631 458M-631 458 -628 571M260 396 206 277M206 277 115 187 98 166 78 81 76 -3M369 408 375 292 324 270M71 -506 188 -506M188 -506 306 -507M306 -507 423 -507M423 -507 540 -510M540 -510 640 -512"/><path class="r-hwy" d="M-47 -504 -23 -504M-23 -504 48 -505M48 -505 71 -506M71 -506 95 -506M95 -506 165 -506M165 -506 188 -506M188 -506 212 -506M212 -506 282 -506M282 -506 306 -507M306 -507 329 -507M329 -507 399 -507M399 -507 423 -507M423 -507 446 -507M446 -507 516 -509M516 -509 540 -510M540 -510 550 -510M550 -510 582 -511M582 -511 592 -511M592 -511 607 -512M607 -512 640 -512M-47 -504 -75 -504M-75 -504 -162 -504M-162 -504 -190 -504M-190 -504 -213 -504M-213 -504 -280 -503M-280 -503 -303 -503M-303 -503 -325 -503M-325 -503 -393 -503M-393 -503 -416 -503M-416 -503 -441 -501M-441 -501 -457 -501M-457 -501 -504 -494M-504 -494 -518 -489M-518 -489 -543 -482M-543 -482 -571 -471M-571 -471 -588 -465M-588 -465 -636 -440M-636 -440 -652 -428M-652 -428 -677 -411M-677 -411 -780 -336"/>
+        <path class="rail" d="M-780 1068 -729 1011 -639 897 -170 292 -97 211 -21 137 76 54 640 -375"/>
+        <path class="r-main" d="M640 -4 224 1M-42 1 117 -3 190 -63 190 -78M-42 1 -409 5 -780 5"/>
+        <g><text class="lbl main zlo" x="-330" y="4" text-anchor="middle" dominant-baseline="central" transform="rotate(-0.8 -330 4)">Central St</text><text class="lbl main zlo" x="449" y="-3" text-anchor="middle" dominant-baseline="central" transform="rotate(-0.8 449 -3)">Central St</text><text class="lbl zlo" x="74" y="-92" text-anchor="middle" dominant-baseline="central" transform="rotate(89.0 74 -92)">Cass Ave</text><text class="lbl zlo" x="-47" y="-480" text-anchor="middle" dominant-baseline="central" transform="rotate(89.6 -47 -480)">Marshall Ave</text><text class="lbl zlo" x="-148" y="699" text-anchor="middle" dominant-baseline="central" transform="rotate(-89.2 -148 699)">O&#8217;Connell Ave</text><text class="lbl zlo" x="-330" y="-224" text-anchor="middle" dominant-baseline="central" transform="rotate(-0.5 -330 -224)">Van Dusen St</text><text class="lbl zlo" x="-519" y="323" text-anchor="middle" dominant-baseline="central" transform="rotate(-89.7 -519 323)">Burns Ave</text><text class="lbl zlo" x="307" y="-439" text-anchor="middle" dominant-baseline="central" transform="rotate(88.9 307 -439)">Jackson Ave</text><text class="lbl zlo" x="-592" y="-462" text-anchor="middle" dominant-baseline="central" transform="rotate(-27.4 -592 -462)">US 14</text><text class="lbl zlo" x="-397" y="585" text-anchor="middle" dominant-baseline="central" transform="rotate(-52.2 -397 585)">Railroad</text><text class="lbl main zhi" x="42" y="13" text-anchor="middle" dominant-baseline="central" transform="rotate(-1.5 42 13)">Central St</text><text class="lbl zhi" x="-43" y="-136" text-anchor="middle" dominant-baseline="central" transform="rotate(89.1 -43 -136)">Marshall Ave</text><text class="lbl zhi" x="115" y="187" text-anchor="middle" dominant-baseline="central" transform="rotate(45.9 115 187)">Cass Ave</text><text class="lbl wat" x="255" y="724" text-anchor="middle" transform="rotate(-27.8 255 724)" dy="-1.2em">Big Cottonwood River</text><text class="lbl prk" x="344" y="260" text-anchor="middle" dy="2.4em">Riverside Park</text><text class="lbl prk" x="-5" y="1007" text-anchor="middle" dy="3em">Golf course</text></g>
+      </svg>
+      <div class="mpins" id="mpins"></div>
+      <div class="mview" role="group" aria-label="Map view"><button type="button" data-v="block" aria-pressed="true">The block</button><button type="button" data-v="town" aria-pressed="false">Whole town</button></div>
+      <div class="mctl"><button type="button" data-z="1.6" aria-label="Zoom in">+</button><button type="button" data-z="0.625" aria-label="Zoom out">&minus;</button></div>
+      <div class="mcard" id="mcard" hidden aria-live="polite"><button type="button" class="x" aria-label="Close">&times;</button><div id="mcardIn"></div></div>
+    </div>
+    <ul class="spots" id="spotList"></ul>
+    <p class="fine">Walking times are rough estimates from straight-line distance. The map is drawn to scale but simplified.</p>
   </section>
 
   <section class="section" aria-labelledby="new-h">
     <h2 id="new-h">What's new inside</h2>
-    <p>Photos are on the way. Here is what is behind the walls and in every home.</p>
+    <p>Here is what is behind the walls and in every home.</p>
     <div class="feat">
       <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 3h16v18H4z"/><circle cx="12" cy="13" r="4.5"/><path d="M7 6h2"/></svg><strong>Washer and dryer in every unit</strong><span>Your own laundry, inside your own home.</span></div>
       <div><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></svg><strong>Central heat and air</strong><span>Each apartment has its own system.</span></div>
@@ -300,8 +460,23 @@ footer a{color:var(--muted)}
     <div class="amen">
       <div><strong>Systems that stay put</strong><span>Private heat, air, and hot water in every home. Five new condensers on a new roof.</span></div>
       <div><strong>Laundry where you live</strong><span>Washer and dryer in the unit, not a shared basement hallway.</span></div>
-      <div><strong>Kitchen ready</strong><span>Quartz counters and a full appliance package, including a hood that vents outside.</span></div>
+      <div><strong>Kitchen ready</strong><span>Granite counters and a full appliance package, including a hood that vents outside.</span></div>
       <div><strong>Old brick, new light</strong><span>Restored main-street shell, skylight corridor, stairways at both ends of the floor.</span></div>
+    </div>
+  </section>
+
+<section class="section" id="tour" aria-labelledby="tour-h">
+    <h2 id="tour-h">Video walking tour</h2>
+    <!-- To publish the tour: put the YouTube video ID in data-youtube-id below (example: data-youtube-id="dQw4w9WgXcQ"). Nothing else needs to change. -->
+    <div id="tourBox" data-youtube-id="">
+      <div class="tour">
+        <img src="img/hero-twilight-800.webp" alt="" loading="lazy" width="800" height="533">
+        <div class="ov">
+          <span class="k">Coming soon</span>
+          <h3>Walk through The Spring, room by room</h3>
+          <p>A guided video tour of the residences and the street-level space is being filmed on site. It will play right here, so this link is the one to keep.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -324,6 +499,119 @@ footer a{color:var(--muted)}
   </footer>
 </div>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top"><b id="lbTitle"></b><span id="lbCount"></span><button type="button" class="lb-x" id="lbX" aria-label="Close">×</button></div>
+  <div class="lb-stage" id="lbStage"><button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Previous photo">‹</button><img id="lbImg" alt=""><button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Next photo">›</button></div>
+  <div class="lb-cap" id="lbCap"></div>
+  <div class="lb-strip" id="lbStrip"></div>
+</div>
+<script>
+window.SP={"sets": {"ext": [1, 5, 3, 6, 8, 9, 7], "com": [63, 62, 64, 61, 60, 66, 65], "base": [69, 68, 67], "u1": [29, 28, 30, 31, 10, 11, 12, 25, 26], "u2": [13, 14, 15, 17, 16, 18, 19, 20, 22, 21, 23, 24], "u3": [37, 36, 33, 32, 34, 35, 38, 40, 39], "u4": [42, 43, 46, 45, 48, 47, 44, 41], "u5": [51, 52, 55, 56, 53, 50, 57, 58, 59, 54, 49]}, "alt": {"10": "Apartment entry door", "11": "Entry with coat closet", "12": "Hall with closet doors", "13": "Open kitchen and living room with tall windows", "14": "Kitchen with stainless range, hood and granite counters", "15": "Living room with tall south windows", "16": "Living room toward the kitchen", "17": "Great room with kitchen along the far wall", "18": "Living room toward the bedrooms and bath", "19": "Bedroom with window", "20": "Bedroom", "21": "Bathroom with wood vanity and tub-shower", "22": "Bedroom", "23": "Stacked washer and dryer by the entry", "24": "Mechanical room with laundry", "25": "Bathroom with white vanity", "26": "Bedroom with ceiling fan", "28": "Kitchen with range, hood and floating shelves", "29": "Living room with four south windows", "30": "Great room toward the hall", "31": "Great room with kitchen beyond", "32": "Kitchen with sink and dishwasher", "33": "L-shaped kitchen with granite counters", "34": "Main room with laundry closet and kitchen", "35": "Laundry and mechanical room", "36": "Living room toward bedroom and bath", "37": "Living room opening to the kitchen", "38": "Bathroom with wood vanity", "39": "Bedroom", "40": "Bedroom with window", "41": "Apartment entry door", "42": "L-shaped kitchen with granite counters", "43": "Kitchen with sink, dishwasher and refrigerator", "44": "Mechanical room with stacked laundry", "45": "Living room toward bedroom and bath", "46": "Living room toward the kitchen", "47": "Bathroom with dark vanity", "48": "Bedroom with window", "49": "Apartment entry door", "50": "Hall toward the main room", "51": "Corner living room with kitchen and windows", "52": "Kitchen with range and hood", "53": "Main room with laundry closet", "54": "Laundry closet with shelving", "55": "Corner room with windows and ceiling fan", "56": "Main room toward bath and bedroom", "57": "Bedroom with window", "58": "Bedroom", "59": "Bathroom with wood vanity", "1": "The Spring, 14 E Central Street, brick front on main street", "3": "The Spring from across Central Street", "5": "The Spring front and storefront glass", "6": "The Spring and its block", "8": "Storefront windows along the sidewalk at dusk", "9": "Storefront entry doors at dusk", "7": "Street-level foyer leading to the residences", "60": "Unfinished commercial space with pressed-tin ceiling", "61": "Open commercial floor with new drywall partitions", "62": "Commercial space facing the street-front glass", "63": "Wide view of the unfinished commercial space", "64": "Commercial space toward the storefront", "65": "Side passage with original brick wall", "66": "Rear of the commercial space with tall windows", "67": "Basement with stone foundation and new framing", "68": "Long basement run with exposed joists", "69": "Open basement with exposed joists"}, "units": {"1": {"title": "Unit 1", "meta": "2 bedroom · about 1,075 sf · south light"}, "2": {"title": "Unit 2", "meta": "2 bedroom · about 1,025 sf · south light"}, "3": {"title": "Unit 3", "meta": "2 bedroom · about 1,400 sf · most room"}, "4": {"title": "Unit 4", "meta": "1 bedroom · about 790 sf"}, "5": {"title": "Unit 5", "meta": "2 bedroom · about 1,175 sf · north corner"}}, "spots": [{"cat": "home", "name": "The Spring", "addr": "14 E Central St", "lat": 44.23897, "lon": -94.97543, "note": "Five residences upstairs, street-level space below", "x": 0.0, "y": -0.0}, {"cat": "city", "name": "Springfield City Hall", "addr": "2 E Central St", "lat": 44.23913, "lon": -94.9758, "note": "City offices", "x": -29.5, "y": -17.8}, {"cat": "food", "name": "6 East Coffee & Smokehouse", "addr": "6 E Central St", "lat": 44.23907, "lon": -94.97554, "note": "Coffee, breakfast, lunch, Friday dinner", "x": -8.8, "y": -11.1}, {"cat": "food", "name": "Tommy's Central Street Steakhouse", "addr": "8 W Central St", "lat": 44.23907, "lon": -94.97647, "note": "Steaks, salad bar, full bar", "x": -82.9, "y": -11.1}, {"cat": "food", "name": "The Garage & Springfield Lanes", "addr": "3 N Cass Ave", "lat": 44.23919, "lon": -94.97435, "note": "Pizza and bowling", "x": 86.1, "y": -24.4}, {"cat": "food", "name": "The Red Apron Cafe", "addr": "15 S Marshall Ave", "lat": 44.23838, "lon": -94.97571, "note": "Weekday breakfast and lunch", "x": -22.3, "y": 65.5}, {"cat": "shop", "name": "Springfield Market", "addr": "101 W Central St", "lat": 44.2389, "lon": -94.97768, "note": "Grocery, bakery, deli, fuel", "x": -179.4, "y": 7.8}, {"cat": "city", "name": "Springfield Public Library", "addr": "120 N Cass Ave", "lat": 44.240726, "lon": -94.974816, "note": "Public library", "x": 49.0, "y": -194.8}, {"cat": "city", "name": "Springfield Community Center", "addr": "33 S Cass Ave", "lat": 44.23881, "lon": -94.9744, "note": "Community center", "x": 82.1, "y": 17.8}, {"cat": "city", "name": "Springfield Post Office", "addr": "18 W Central St", "lat": 44.23908, "lon": -94.97725, "note": "USPS", "x": -145.2, "y": -12.2}, {"cat": "park", "name": "Riverside Park", "addr": "Along the Big Cottonwood River", "lat": 44.23671, "lon": -94.97136, "note": "Pool, play areas, ball fields, trails, river access", "x": 324.6, "y": 250.7}, {"cat": "park", "name": "Rothenburg Campground", "addr": "33 S Cass Ave", "lat": 44.237472, "lon": -94.974256, "note": "City campground next to Riverside Park", "x": 93.6, "y": 166.2}, {"cat": "park", "name": "Springfield Golf Course", "addr": "651 S O'Connell Ave", "lat": 44.2298, "lon": -94.976, "note": "9 holes along the Cottonwood River", "x": -45.5, "y": 1017.4}, {"cat": "school", "name": "Springfield Public Schools (ISD 85)", "addr": "12 S Burns Ave", "lat": 44.23877, "lon": -94.98205, "note": "District office, elementary and high school", "x": -528.0, "y": 22.2}, {"cat": "city", "name": "St. Raphael Catholic Church", "addr": "20 W Van Dusen St", "lat": 44.2413, "lon": -94.97706, "note": "Parish church", "x": -130.0, "y": -258.5}, {"cat": "city", "name": "Allina Health Springfield Clinic", "addr": "625 N Jackson Ave", "lat": 44.24655, "lon": -94.97115, "note": "Clinic", "x": 341.3, "y": -841.0}]};
+(function(){
+  var D=window.SP;
+  /* hero toggle */
+  var hp=document.getElementById('heroPhoto');
+  hp.querySelectorAll('.hero-toggle button').forEach(function(b){b.addEventListener('click',function(){
+    var dusk=b.dataset.mode==='dusk';hp.classList.toggle('is-dusk',dusk);
+    hp.querySelectorAll('.hero-toggle button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    if(dusk){var im=hp.querySelector('img.dusk');im.loading='eager';}
+  })});
+  /* lightbox */
+  var lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),cnt=document.getElementById('lbCount'),ttl=document.getElementById('lbTitle'),strip=document.getElementById('lbStrip');
+  var cur=null,idx=0,last=null;
+  var titles={ext:'The building',com:'Street level: unfinished commercial space',base:'Basement'};
+  function pad(n){return (n<10?'0':'')+n}
+  function show(i){var ids=D.sets[cur];idx=(i+ids.length)%ids.length;var id=ids[idx];
+    img.src='img/p/'+pad(id)+'.webp';img.alt=D.alt[id]||'';cap.textContent=D.alt[id]||'';cnt.textContent=(idx+1)+' / '+ids.length;
+    strip.querySelectorAll('button').forEach(function(b,j){b.classList.toggle('on',j===idx);if(j===idx)b.scrollIntoView({block:'nearest',inline:'center'})});
+    var nx=new Image();nx.src='img/p/'+pad(ids[(idx+1)%ids.length])+'.webp';}
+  function open(set,i){cur=set;last=document.activeElement;var ids=D.sets[set];
+    ttl.textContent=set.charAt(0)==='u'?D.units[set.slice(1)].title:(titles[set]||'');
+    strip.innerHTML=ids.map(function(id,j){return '<button type="button" aria-label="Photo '+(j+1)+'"><img src="img/t/'+pad(id)+'.webp" alt="" loading="lazy"></button>'}).join('');
+    strip.querySelectorAll('button').forEach(function(b,j){b.addEventListener('click',function(){show(j)})});
+    lb.classList.add('open');document.body.style.overflow='hidden';show(i||0);document.getElementById('lbX').focus();}
+  function close(){lb.classList.remove('open');document.body.style.overflow='';if(last)last.focus();}
+  document.addEventListener('click',function(e){var t=e.target.closest('[data-set]');if(t&&!t.closest('.lb')){e.preventDefault();open(t.dataset.set,+t.dataset.i||0);}});
+  document.getElementById('lbX').addEventListener('click',close);
+  document.getElementById('lbPrev').addEventListener('click',function(){show(idx-1)});
+  document.getElementById('lbNext').addEventListener('click',function(){show(idx+1)});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1);});
+  var sx=null;var st=document.getElementById('lbStage');
+  st.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+  st.addEventListener('touchend',function(e){if(sx===null)return;var dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)show(idx+(dx<0?1:-1));sx=null});
+  lb.addEventListener('click',function(e){if(e.target===lb||e.target===st)close()});
+  /* plan polygons */
+  document.querySelectorAll('.plan-int a[data-unit]').forEach(function(a){
+    function go(e){e.preventDefault();var k=a.dataset.unit;var c=document.getElementById('unit-'+k);c.classList.add('flash');setTimeout(function(){c.classList.remove('flash')},1600);open('u'+k,0);}
+    a.addEventListener('click',go);a.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')go(e)});
+  });
+  /* video tour swap */
+  var tb=document.getElementById('tourBox'),yid=(tb.dataset.youtubeId||'').trim();
+  if(yid){tb.innerHTML='<div class="tour-embed"><iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(yid)+'?rel=0" title="The Spring video walking tour" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>';}
+  /* custom map */
+  var colors={home:'#b5543a',food:'#d98c2b',park:'#3f8a4a',city:'#1d2b4a',school:'#6b4ea8',shop:'#2a7f9e'};
+  var home=D.spots[0];
+  function walk(s){var R=6371000,toR=Math.PI/180;var dLat=(s.lat-home.lat)*toR,dLon=(s.lon-home.lon)*toR;var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(home.lat*toR)*Math.cos(s.lat*toR)*Math.sin(dLon/2)*Math.sin(dLon/2);var m=2*R*Math.asin(Math.sqrt(a))*1.3;var min=Math.max(1,Math.round(m/80));return m<60?'steps away':'about '+min+' min walk';}
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var list=document.getElementById('spotList');
+  list.innerHTML=D.spots.map(function(s,i){return '<li data-i="'+i+'" data-cat="'+s.cat+'" tabindex="0"><span class="dot" style="background:'+colors[s.cat]+'"></span><span><b>'+esc(s.name)+'</b>'+esc(s.addr)+'<br><small>'+esc(s.note)+(i?' · '+walk(s):'')+'</small></span></li>'}).join('');
+  var mEl=document.getElementById('smap'),svg=document.getElementById('smapSvg'),pinBox=document.getElementById('mpins'),card=document.getElementById('mcard'),cardIn=document.getElementById('mcardIn');
+  var BOX=svg.getAttribute('viewBox').split(' ').map(Number);BOX=[BOX[0],BOX[1],BOX[0]+BOX[2],BOX[1]+BOX[3]];
+  var st={cx:0,cy:0,s:1},cat='all',sel=-1;
+  var pins=D.spots.map(function(s,i){var b=document.createElement('button');b.type='button';b.className='mpin'+(i?'':' home');b.setAttribute('aria-label',s.name+', '+s.addr);b.innerHTML='<i style="background:'+colors[s.cat]+'"></i>'+(i?'':'<b>The Spring</b>');b.addEventListener('click',function(e){e.stopPropagation();select(i,false)});pinBox.appendChild(b);return b;});
+  function dims(){return [mEl.clientWidth||1,mEl.clientHeight||1]}
+  function sMin(){var d=dims();return 0.7*Math.min(d[0]/(BOX[2]-BOX[0]),d[1]/(BOX[3]-BOX[1]))}
+  var SMAX=4;
+  function clamp(){var d=dims();st.s=Math.max(sMin(),Math.min(SMAX,st.s));var hw=d[0]/2/st.s,hh=d[1]/2/st.s;
+    st.cx=(BOX[2]-BOX[0]<2*hw)?(BOX[0]+BOX[2])/2:Math.max(BOX[0]+hw,Math.min(BOX[2]-hw,st.cx));
+    st.cy=(BOX[3]-BOX[1]<2*hh)?(BOX[1]+BOX[3])/2:Math.max(BOX[1]+hh,Math.min(BOX[3]-hh,st.cy));}
+  function apply(){clamp();var d=dims(),s=st.s,vx=st.cx-d[0]/2/s,vy=st.cy-d[1]/2/s;
+    svg.setAttribute('viewBox',vx+' '+vy+' '+d[0]/s+' '+d[1]/s);
+    var px=function(p,m){return Math.max(m||0,p/s)+'px'},S=svg.style;
+    S.setProperty('--w-loc',px(3.2,9));S.setProperty('--w-locc',px(5,11));S.setProperty('--w-hwy',px(5,13));S.setProperty('--w-hwyc',px(7.5,16));
+    S.setProperty('--w-main',px(5.5,13));S.setProperty('--w-rail',px(1.6));S.setProperty('--dash',(6/s)+' '+(4/s));S.setProperty('--w-riv',px(6,26));
+    mEl.classList.toggle('zin',s>0.5);S.setProperty('--fs',(12.5/s)+'px');S.setProperty('--fsw',(3.5/s)+'px');
+    D.spots.forEach(function(sp,i){var b=pins[i],x=(sp.x-vx)*s,y=(sp.y-vy)*s;var vis=(cat==='all'||i===0||sp.cat===cat)&&x>-30&&y>-10&&x<d[0]+30&&y<d[1]+60;
+      b.style.display=vis?'':'none';b.style.left=x+'px';b.style.top=y+'px';});}
+  function fit(ids,pad){var d=dims(),xs=ids.map(function(i){return D.spots[i].x}),ys=ids.map(function(i){return D.spots[i].y});
+    var x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),y0=Math.min.apply(0,ys),y1=Math.max.apply(0,ys);
+    st.cx=(x0+x1)/2;st.cy=(y0+y1)/2+((pad*0.4)/Math.max(.01,st.s));var cb=card.hidden?0:card.offsetHeight+10;st.s=Math.min((d[0]-2*pad)/Math.max(40,x1-x0),(d[1]-2*pad-50-cb)/Math.max(40,y1-y0));st.s=Math.min(st.s,1.25);st.cy=(y0+y1)/2-(25-cb/2)/st.s;apply();}
+  var BLOCK=[];D.spots.forEach(function(sp,i){if(Math.abs(sp.x)<240&&Math.abs(sp.y)<120)BLOCK.push(i)});
+  function hideCard(){card.hidden=true;sel=-1;pins.forEach(function(b){b.classList.remove('on')});list.querySelectorAll('li').forEach(function(li){li.classList.remove('on')});}
+  function view(v){if(v==='town'&&sel===0)hideCard();document.querySelectorAll('.mview button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.v===v?'true':'false')});
+    if(v==='town')fit(D.spots.map(function(s,i){return i}),36);else fit(BLOCK,40);}
+  function select(i,fromList){sel=i;var sp=D.spots[i];pins.forEach(function(b,j){b.classList.toggle('on',j===i)});
+    list.querySelectorAll('li').forEach(function(li){li.classList.toggle('on',+li.dataset.i===i)});
+    cardIn.innerHTML='<b>'+esc(sp.name)+'</b>'+esc(sp.addr)+'<br><small>'+esc(sp.note)+(i?' · '+walk(sp):'')+'</small>';card.hidden=false;
+    var d=dims(),vx=st.cx-d[0]/2/st.s,vy=st.cy-d[1]/2/st.s,x=(sp.x-vx)*st.s,y=(sp.y-vy)*st.s;
+    if(fromList){st.s=Math.max(st.s,1.0);st.cx=sp.x;st.cy=sp.y+30/st.s;apply();}
+    else if(x<40||x>d[0]-40||y<70||y>d[1]-110){st.cx=sp.x;st.cy=sp.y+30/st.s;apply();}}
+  card.querySelector('.x').addEventListener('click',hideCard);
+  document.querySelectorAll('.mview button').forEach(function(b){b.addEventListener('click',function(){view(b.dataset.v)})});
+  document.querySelectorAll('.mctl button').forEach(function(b){b.addEventListener('click',function(){st.s*=+b.dataset.z;apply();})});
+  var ptr={},last=null,moved=0;
+  function zoomAt(f,px,py){var d=dims(),wx=st.cx+(px-d[0]/2)/st.s,wy=st.cy+(py-d[1]/2)/st.s;st.s*=f;clamp();st.cx=wx-(px-d[0]/2)/st.s;st.cy=wy-(py-d[1]/2)/st.s;apply();}
+  mEl.addEventListener('pointerdown',function(e){if(e.target.closest('button'))return;mEl.setPointerCapture(e.pointerId);ptr[e.pointerId]={x:e.clientX,y:e.clientY};moved=0;mEl.classList.add('drag');});
+  mEl.addEventListener('pointermove',function(e){var p=ptr[e.pointerId];if(!p)return;var ids=Object.keys(ptr);
+    if(ids.length===1){st.cx-=(e.clientX-p.x)/st.s;st.cy-=(e.clientY-p.y)/st.s;moved+=Math.abs(e.clientX-p.x)+Math.abs(e.clientY-p.y);p.x=e.clientX;p.y=e.clientY;apply();}
+    else if(ids.length===2){var o=ptr[ids[0]===String(e.pointerId)?ids[1]:ids[0]];var d0=Math.hypot(p.x-o.x,p.y-o.y);p.x=e.clientX;p.y=e.clientY;var d1=Math.hypot(p.x-o.x,p.y-o.y);var r=mEl.getBoundingClientRect();if(d0>0)zoomAt(d1/d0,(p.x+o.x)/2-r.left,(p.y+o.y)/2-r.top);moved=99;}});
+  function up(e){delete ptr[e.pointerId];if(!Object.keys(ptr).length)mEl.classList.remove('drag');}
+  mEl.addEventListener('pointerup',up);mEl.addEventListener('pointercancel',up);
+  mEl.addEventListener('wheel',function(e){if(!(e.ctrlKey||e.metaKey))return;e.preventDefault();var r=mEl.getBoundingClientRect();zoomAt(e.deltaY<0?1.15:0.87,e.clientX-r.left,e.clientY-r.top);},{passive:false});
+  mEl.addEventListener('dblclick',function(e){if(e.target.closest('button'))return;var r=mEl.getBoundingClientRect();zoomAt(1.6,e.clientX-r.left,e.clientY-r.top);});
+  window.addEventListener('resize',function(){apply()});
+  select(0,false);view('block');
+  list.addEventListener('click',function(e){var li=e.target.closest('li');if(!li)return;select(+li.dataset.i,true);mEl.scrollIntoView({behavior:'smooth',block:'center'});});
+  list.addEventListener('keydown',function(e){if(e.key==='Enter'){e.target.click()}});
+  document.querySelectorAll('.spot-filter button').forEach(function(b){b.addEventListener('click',function(){cat=b.dataset.cat;
+    document.querySelectorAll('.spot-filter button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    list.querySelectorAll('li').forEach(function(li,i){li.style.display=(cat==='all'||i===0||li.dataset.cat===cat)?'':'none'});
+    if(sel>0&&cat!=='all'&&D.spots[sel].cat!==cat){card.hidden=true;}
+    if(cat==='all')view('block');else{var ids=[0];D.spots.forEach(function(sp,i){if(sp.cat===cat)ids.push(i)});document.querySelectorAll('.mview button').forEach(function(x){x.setAttribute('aria-pressed','false')});fit(ids,44);}
+    });});
+
+})();
+</script>
 <script>
 (function(){
   var url = 'https://greenkeypropertiesmn.com/the-spring/';
@@ -347,6 +635,9 @@ footer a{color:var(--muted)}
     if (navigator.share) navigator.share({ title: title, text: text, url: url }).catch(function(){});
     else copy();
   }
+  var blurb='The Spring at 14 E Central in downtown Springfield: five renewed residences over main street, with photos, floor plans, and a map of the block. '+url;
+  var bb=document.getElementById('blurbBtn');
+  if(bb) bb.addEventListener('click',function(){ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(blurb).then(function(){toast('Note copied, paste it into a text or email.');});} else {toast(blurb);} });
   ['shareBtn','copyBtn','copyBtn2'].forEach(function(id){
     var el = document.getElementById(id);
     if (!el) return;
