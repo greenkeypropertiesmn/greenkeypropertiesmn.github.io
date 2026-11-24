@@ -138,6 +138,7 @@
   .field-error{display:none;color:var(--warn);font-size:.84rem;margin:6px 0 0}
   .field-error.visible{display:block}
   input.input-error{border-color:var(--warn)!important;box-shadow:0 0 0 3px rgba(154,91,18,.16)!important}
+  input.hp-field{position:absolute;left:-9999px;top:0;width:1px;height:1px;padding:0;border:0;overflow:hidden}
 </style>
 </head>
 <body>
@@ -193,7 +194,7 @@
 
   <!-- hidden routing helpers for Formspree -->
   <input type="hidden" name="_subject" value="New Green Key rental pre-screen">
-  <input type="text" name="_gotcha" style="display:none">
+  <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
   <input type="hidden" name="form_source" value="green-key-intake">
 
   <!-- 1. About you -->
@@ -207,8 +208,8 @@
     </div>
     <div class="row">
       <div><label>Email <span class="req">*</span></label><input type="email" name="email" required></div>
-      <div><label>Cell phone <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="952-000-0000" autocomplete="tel" required>
-        <p class="field-error" id="phoneError">That number doesn't look right — mind double-checking it?</p></div>
+      <div><label for="phone">Cell phone <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="952-000-0000" autocomplete="tel" required aria-describedby="phoneError" aria-invalid="false">
+        <p class="field-error" id="phoneError" aria-live="polite">That number doesn't look right. Please enter a real 10 digit phone number so we can reach you.</p></div>
     </div>
     <label>Current mailing address <span class="req">*</span></label>
     <input type="text" name="current_address" placeholder="Street, unit, city, state, ZIP" required>
@@ -493,6 +494,7 @@
 </footer>
 </div>
 
+<script src="phone-validate.js"></script>
 <script>
   // ---- occupants ----
   let occN = 0;
@@ -556,30 +558,43 @@
   rent.addEventListener('input', calc);
   income.addEventListener('input', calc);
 
-  // ---- phone validation (mirrors the realtor pages) ----
-  function isValidUSPhone(raw){
-    var d=String(raw||'').replace(/\D/g,'');
-    if(d.length===11 && d.charAt(0)==='1') d=d.slice(1);
-    if(d.length!==10) return false;
-    if(+d.charAt(0)<2 || +d.charAt(3)<2) return false;
-    if(d.charAt(1)==='1' && d.charAt(2)==='1') return false;
-    if(d.slice(3,6)==='555') return false;
-    if(/^(\d)\1{9}$/.test(d)) return false;
-    return true;
+  // ---- phone: shared isValidUSPhone in phone-validate.js ----
+  var phoneInput = document.getElementById('phone');
+  var phoneError = document.getElementById('phoneError');
+  function setPhoneError(on){
+    phoneInput.classList.toggle('input-error', on);
+    phoneInput.setAttribute('aria-invalid', on ? 'true' : 'false');
+    phoneError.classList.toggle('visible', on);
   }
-  document.getElementById('phone').addEventListener('input', function(){
-    var v=this.value.replace(/[^0-9]/g,'').slice(0,10);
+  phoneInput.addEventListener('input', function(){
+    var v=this.value.replace(/\D/g,'');
+    if(v.length===11 && v.charAt(0)==='1') v=v.slice(1);
+    if(v.length>10) v=v.slice(0,10);
     if(v.length>=7){ v=v.slice(0,3)+'-'+v.slice(3,6)+'-'+v.slice(6); }
     else if(v.length>=4){ v=v.slice(0,3)+'-'+v.slice(3); }
     this.value=v;
-    this.classList.remove('input-error'); document.getElementById('phoneError').classList.remove('visible');
+    // A full number is checked while typing. A partial number waits for blur.
+    if(v.replace(/\D/g,'').length===10) setPhoneError(!isValidUSPhone(v));
+    else setPhoneError(false);
+  });
+  phoneInput.addEventListener('blur', function(){
+    if(!this.value.trim()){ setPhoneError(false); return; }
+    setPhoneError(!isValidUSPhone(this.value));
   });
 
   // ---- submit (Formspree AJAX) ----
   const form = document.getElementById('gkForm');
   const btn = document.getElementById('submitBtn');
+  function showThanks(){
+    form.style.display='none';
+    document.getElementById('thanks').style.display='block';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
   form.addEventListener('submit', async function(e){
     e.preventDefault();
+    // Filled honeypot: skip the Formspree POST and show the normal success state.
+    var trap = form.querySelector('[name="_gotcha"]');
+    if(trap && trap.value.trim()){ showThanks(); return; }
     // Validate, and remember the FIRST field that needs fixing so we can jump to it.
     let firstBad = null;
     form.querySelectorAll('[required]').forEach(el=>{
@@ -590,12 +605,11 @@
       else if(el.classList){ el.classList.remove('miss'); }
     });
     // Phone must be a real US number (not just non-empty).
-    var ph=document.getElementById('phone');
-    if(!isValidUSPhone(ph.value)){
-      ph.classList.add('input-error'); document.getElementById('phoneError').classList.add('visible');
-      if(!firstBad || (ph.compareDocumentPosition(firstBad) & Node.DOCUMENT_POSITION_FOLLOWING)) firstBad = ph;
+    if(!isValidUSPhone(phoneInput.value)){
+      setPhoneError(true);
+      if(!firstBad || (phoneInput.compareDocumentPosition(firstBad) & Node.DOCUMENT_POSITION_FOLLOWING)) firstBad = phoneInput;
     } else {
-      ph.classList.remove('input-error'); document.getElementById('phoneError').classList.remove('visible');
+      setPhoneError(false);
     }
     // Jump straight to the first thing that needs attention — no hunting for the red box.
     if(firstBad){
@@ -607,9 +621,7 @@
     try{
       const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
       if(res.ok){
-        form.style.display='none';
-        document.getElementById('thanks').style.display='block';
-        window.scrollTo({top:0,behavior:'smooth'});
+        showThanks();
       } else { throw new Error('bad response'); }
     }catch(err){
       btn.disabled=false; btn.textContent='Submit pre-screen';
